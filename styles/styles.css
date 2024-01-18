@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope&family=Roboto+Condensed:wght@200;400&family=Shadows+Into+Light&display=swap');
+:root{
+    --white: #E8E8E8E8;
+    --blue: #050B9E;
+    --red: #D00000;
+    --font: 'Roboto Condensed';
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font);
+}
+
+.container-principal {
+    height: 100vh;
+    background-color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ESTILOS CONTENEDOR MAPA */
+.container-map {
+    width: 100%;
+    height: 100%;
+}
+
+.map {
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.map iframe {
+    border: 0;
+    border-radius: 10px;
+}
+
+.info {
+    background: chocolate;
+    height: 20vh;
+}
+
+.info {
+    
+}
+
+/* ESTILOS CONTENEDOR LOGIN */
+
+.container-login {
+    width: 40%;
+}
+
+.section-login {
+    background-color: var(--red);
+    height: 50vh;
+}
+.section-about {
+    background-color: var(--blue);
+height: 50vh;
+}
