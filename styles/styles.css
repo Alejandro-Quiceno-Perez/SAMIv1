@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope&family=Roboto+Condensed:wght@200;400&family=Shadows+Into+Light&display=swap");
+:root {
+  --white: #e8e8e8e8;
+  --blue: #050b9e;
+  --red: #d00000;
+  --dark: #000
+  --font: "Roboto Condensed";
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font);
+}
+
+.container-principal {
+  height: 100vh;
+  background-color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ESTILOS CONTENEDOR MAPA */
+.container-map {
+  width: 100%;
+  height: 100%;
+}
+
+.map {
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: -10px -2px 3px var(--dark) ;
+}
+
+.map iframe {
+  border: 0;
+  border-radius: 30px;
+  height: 68%;
+  width: 75%;
+  outline: 0;
+  border: 0;
+  text-decoration: none;
+}
+
+
+.info {
+  height: 20vh;
+}
+
+.info h1 {
+  margin-left: 60px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 3px;
+  font-size: 40px;
+}
+
+.info h3 {
+  margin-left: 60px;
+  margin-top: 20px;
+  text-transform: uppercase;
+  font-weight: lighter;
+  letter-spacing: 3px;
+  font-size: 25px;
+}
+
+/* ESTILOS CONTENEDOR LOGIN */
+
+.container-login {
+  width: 40%;
+}
+
+.section-login {
+  background-color: var(--red);
+  height: 50vh;
+  position: relative;
+  cursor: pointer;
+}
+
+.login {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 50px;
+  bottom: 50px;
+  padding: 10px;
+  text-decoration: none;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.login h1 {
+  font-size:25px;
+  font-weight: lighter;
+}
+
+.login::before {
+  background-color: var(--white);
+  content: "";
+  display: inline-block;
+  height: 1px;
+  margin-right: 10px;
+  transition: all .2s cubic-bezier(.25,.8,.25,1);
+  width: 0;
+}
+
+.login:hover::before {
+  background-color: var(--white);
+  width: 30px;
+}
+
+/* SECCION ABOUT ME */
+.section-about {
+  position: relative;
+  background-color: var(--blue);
+  height: 50vh;
+  cursor: pointer;
+}
+
+.img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+img {
+  object-fit:cover;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  border-radius: 10px;
+}
+
+.about {
+  position: absolute;
+  left: 50px;
+  bottom: 50px;
+  padding: 10px;
+  text-decoration: none;
+  color: var(--white);
+}
+
+
+
