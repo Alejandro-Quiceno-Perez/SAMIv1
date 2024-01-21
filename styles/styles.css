@@ -3,6 +3,7 @@
   --white: #e8e8e8e8;
   --blue: #050b9e;
   --red: #d00000;
+  --dark: #000
   --font: "Roboto Condensed";
 }
 
@@ -32,16 +33,39 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: -10px -2px 3px var(--dark) ;
 }
 
 .map iframe {
   border: 0;
-  border-radius: 10px;
+  border-radius: 30px;
+  height: 68%;
+  width: 75%;
+  outline: 0;
+  border: 0;
+  text-decoration: none;
 }
 
+
 .info {
-  background: chocolate;
   height: 20vh;
+}
+
+.info h1 {
+  margin-left: 60px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 3px;
+  font-size: 40px;
+}
+
+.info h3 {
+  margin-left: 60px;
+  margin-top: 20px;
+  text-transform: uppercase;
+  font-weight: lighter;
+  letter-spacing: 3px;
+  font-size: 25px;
 }
 
 /* ESTILOS CONTENEDOR LOGIN */
@@ -58,6 +82,8 @@
 }
 
 .login {
+  display: flex;
+  align-items: center;
   position: absolute;
   left: 50px;
   bottom: 50px;
@@ -65,6 +91,27 @@
   text-decoration: none;
   color: var(--white);
   text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.login h1 {
+  font-size:25px;
+  font-weight: lighter;
+}
+
+.login::before {
+  background-color: var(--white);
+  content: "";
+  display: inline-block;
+  height: 1px;
+  margin-right: 10px;
+  transition: all .2s cubic-bezier(.25,.8,.25,1);
+  width: 0;
+}
+
+.login:hover::before {
+  background-color: var(--white);
+  width: 30px;
 }
 
 /* SECCION ABOUT ME */
@@ -77,10 +124,9 @@
 
 .img {
   position: absolute;
-  top: 25px;
-  left: 30px;
-  height: 65%;
-  width: 90%;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 
 img {
@@ -98,5 +144,7 @@ img {
   padding: 10px;
   text-decoration: none;
   color: var(--white);
-  font-weight: bold;
 }
+
+
+
