@@ -167,21 +167,74 @@
   color: var(--white);
 }
 
-.open-menu {
-  display: none;
+.open-menu,.close-menu {
+  border: none;
+  background: none;
+  display: block;
+  padding: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+
+}
+
+.open-menu i,
+.close-menu i {
+  font-size: 30px;
+  color: var(--white);
+  transition: .2s;
+}
+
+.close-menu i:hover{
+  color: var(--red);
+}
+
+.open-menu i:hover{
+  color: var(--dark);
+}
+
+.close-menu:hover {
+  transform:scale(1.3);
+  
+}
+.open-menu:hover {
+  transform:scale(1.3);
 }
 
 .menu {
   position: absolute;
+  top: 0;
   right: 0;
-  
+  opacity: 0;
+  visibility: hidden ;
+  transition: 0.3s;
 }
+
+.menu button {
+  position:absolute;
+  top: 30px;
+  right: 45px;
+  padding: 5px;
+}
+
 .menu-nav {
+  width: 100vw;
   flex-direction: column;
-  background-color: #000;
+  background-color: #000000;
   bottom: 0;
   padding: 10px;
   height: 100vh;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.menu.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu-nav li {
+  padding: 20px;
 }
 
 /* MENU HAMBURGUESA */
