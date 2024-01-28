@@ -69,6 +69,9 @@
   cursor: pointer;
   transition: 0.2s;
 
+  background-color: #ffffff6e;
+  border-radius: 50%;
+
 }
 
 .open-menu i,
@@ -144,7 +147,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: -10px -2px 3px var(--dark);
 }
 
 .map iframe {
@@ -249,7 +251,7 @@ img {
 
 .about {
   position: absolute;
-  bottom: 0;
+  bottom: 10px;
   padding: 20px;
   text-decoration: none;
   color: var(--white);
