@@ -141,7 +141,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: -10px -2px 3px var(--dark);
+  margin-left: 5%;
+  /* margin-top: 5%; */
+  /* box-shadow: -10px -2px 3px var(--dark); */
 }
 
 .map iframe {

@@ -1,25 +1,36 @@
+//Selectors
+// const direction = document.getElementById("direction");
+
+//token
+const accessToken =
+  "pk.eyJ1Ijoia3dtZWppYSIsImEiOiJjbGl2eWk4eWwxb3dhM3Bxdm5kNGtpOXRrIn0.RaBQJtXzaW3dBHodhcQg2Q";
+
+const country = "CO";
+
 if (!"geolocation" in navigator) {
   console.error("Geolocalización no disponible");
 } else {
+  // if (direction.value.trim() !== "") {
+  //   obtenerCoordenadas(direction.value);
+  // }
   navigator.geolocation.getCurrentPosition(
     (position) => {
       console.log(position);
-      mapboxgl.accessToken =
-        "pk.eyJ1Ijoia3dtZWppYSIsImEiOiJjbGl2eWk4eWwxb3dhM3Bxdm5kNGtpOXRrIn0.RaBQJtXzaW3dBHodhcQg2Q";
+      mapboxgl.accessToken = accessToken;
       let map = new mapboxgl.Map({
         container: "map",
-        style: "mapbox://styles/mapbox/navigation-day-v1",
+        style: "mapbox://styles/mapbox/outdoors-v12",
         center: [position.coords.longitude, position.coords.latitude],
         zoom: 10,
       });
 
       let markers = [];
       let routeLayerID = "route";
-
       let initialMarker = new mapboxgl.Marker()
         .setLngLat([position.coords.longitude, position.coords.latitude])
         .addTo(map);
       markers.push(initialMarker);
+      // }
 
       function updateRoute() {
         if (markers.length === 2) {
@@ -84,3 +95,50 @@ if (!"geolocation" in navigator) {
     }
   );
 }
+
+async function obtenerCoordenadas(direccion) {
+  try {
+    const apiUrl = `https://api.mapbox.com/geocoding/v5/mapbox.places/${direccion}.json?country=${country}&access_token=${accessToken}`;
+    fetch(apiUrl)
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.features && data.features.length > 0) {
+          // const coordenadas = data.features[0].geometry.coordinates;
+          mapboxgl.accessToken = accessToken;
+          let map = new mapboxgl.Map({
+            container: "map",
+            style: "mapbox://styles/mapbox/navigation-day-v1",
+            center: [
+              data.features[0].geometry.coordinates,
+              position.coords.latitude,
+            ],
+            zoom: 10,
+          });
+
+          let markers = [];
+          // let routeLayerID = "route";
+          let initialMarker = new mapboxgl.Marker()
+            .setLngLat([data.features[0].center[0], data.features[0].center[1]])
+            .addTo(map);
+          markers.push(initialMarker);
+
+          console.log(data);
+        } else {
+          console.log(`No se encontraron coordenadas para "${direccion}"`);
+        }
+      });
+  } catch (error) {
+    console.error("Error al realizar la solicitud:", error);
+  }
+}
+
+// function buscarCoordenadas() {
+//   const direccionInput = document.getElementById("direccionInput");
+//   const direccion = direccionInput.value;
+
+//   if (direccion.trim() !== "") {
+//     obtenerCoordenadas(direccion);
+//   } else {
+//     console.log("Por favor, ingrese una dirección válida.");
+//   }
+// }
