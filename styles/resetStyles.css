@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope&family=Roboto+Condensed:wght@200;400&family=Shadows+Into+Light&display=swap");
+:root {
+  --white: #e8e8e8e8;
+  --blue: #050b9e;
+  --red: #d00000;
+  --dark: #000;
+  --font: "Roboto Condensed";
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font);
+}
