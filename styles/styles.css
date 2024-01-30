@@ -218,22 +218,16 @@
   cursor: pointer;
 }
 
-.img {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-}
 
-img {
+d-img {
   object-fit: cover;
-  width: 100%;
+  width: 100px !important;
   height: 100%;
   opacity: 0.6;
   border-radius: 10px;
 }
 
-.about {
+.about { 
   position: absolute;
   bottom: 10px;
   padding: 20px;
