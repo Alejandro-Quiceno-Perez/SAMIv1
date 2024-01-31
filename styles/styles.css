@@ -241,7 +241,7 @@ img {
   width: 100%;
   height: 100%;
   opacity: 0.6;
-  border-radius: 10px;
+  
 }
 
 .about {
@@ -292,3 +292,24 @@ img {
 }
 
 /* FIN SLIDE DE EMERGENCIA */
+
+#imageSlider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 3s ease-in-out;
+  overflow-x: hidden;
+}
+
+/* Mostrar la primera imagen al cargar la página */
+.slide:first-child {
+  opacity: 1;
+}
