@@ -1,0 +1,48 @@
+.container-fluid {
+  background-color: aqua;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+/* left */
+.container-left {
+  width: 100%;
+  height: 100vh;
+  background-color: yellow;
+}
+
+.container-left .container-text,
+.container-rigth .container-text {
+  height: 100%;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  padding: 60px;
+}
+
+.container-left .container-text h2,
+.container-rigth .container-text h2 {
+  font-size: 40px;
+  text-decoration: line-through;
+  text-transform: uppercase;
+}
+
+/* center */
+.container-center {
+  width: 100%;
+  text-align: center;
+  height: 100vh;
+  background-color: rgb(55, 50, 205);
+}
+
+.container-center .container-text {
+    
+}
+
+/* rigth */
+.container-rigth {
+  width: 100%;
+  text-align: center;
+  height: 100vh;
+  background-color: rgba(255, 7, 7, 0.897);
+}
