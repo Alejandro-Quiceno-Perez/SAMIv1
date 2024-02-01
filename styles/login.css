@@ -1,0 +1,54 @@
+/* LOGIN GOOGLE */
+#customBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  color: #444;
+  width: 190px;
+  border-radius: 5px;
+  border: thin solid #888;
+  box-shadow: 1px 1px 1px grey;
+  white-space: nowrap;
+}
+  
+
+#customBtn:hover {
+  cursor: pointer;
+}
+
+span.label {
+  font-family: serif;
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+}
+
+span.icon {
+  /* background: url("/img/google.png") transparent 5px 50% no-repeat; */
+  display: flex;
+  vertical-align: middle;
+  width: 42px;
+  height: 42px;
+  padding: 4px;
+}
+
+span.buttonText {
+  display: flex;
+  vertical-align: middle;
+  padding-left: 42px;
+  padding-right: 42px;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  align-items: center;
+}
+
+span img {
+  width: 100%;
+}
+
+#gSignInWrapper{
+display: flex !important;
+gap: 25px;
+}

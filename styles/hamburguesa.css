@@ -73,6 +73,7 @@ opacity: 0;
     list-style: none;
 }
 .menu li a{
+    color: var(--white);
     text-decoration: none;
     background-color:  var(--white);
     display: block;

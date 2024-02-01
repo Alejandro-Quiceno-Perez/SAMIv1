@@ -12,9 +12,85 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="/styles/login.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+
 </head>
 
 <body>
+    <!-- MODAL MODAL MODAL --><!-- MODAL MODAL MODAL --><!-- MODAL MODAL MODAL -->
+    <!-- MODAL MODAL MODAL --><!-- MODAL MODAL MODAL --><!-- MODAL MODAL MODAL -->
+
+    <!-- Button trigger modal -->
+    <!-- Modal -->
+    <div class="modal fade " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Forms</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body row">
+                    <form class="col">
+                        <h5 class="mb-2">Register</h5>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        </div>
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary ">Login</button>
+                        </div>
+                    </form>
+                    <form class="col">
+                        <h5 class="mb-2">Login</h5>
+
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="mb-3 google">
+                            <div id="gSignInWrapper">
+                            <span class="label">Sign in with:</span>
+                            <div id="customBtn" class="customGPlusSignIn">
+                              <span class="icon"><img src="./img/google.png" alt="google login"></span>
+                              <span class="buttonText">Google</span>
+                            </div>
+                          </div>
+                          <div id="name"></div>
+                        
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary ">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL MODAL MODAL --><!-- MODAL MODAL MODAL --><!-- MODAL MODAL MODAL -->
+    <!-- MODAL MODAL MODAL --><!-- MODAL MODAL MODAL --><!-- MODAL MODAL MODAL -->
+
     <!-- ESTILOS HEADER - LOGO Y NAVBAR -->
     <header class="container-header">
         <div class="logo">
@@ -24,7 +100,7 @@
         <nav class="menu" id="menu">
             <button class="close-menu" id="close-menu"><i class="bi bi-x-lg"></i></button>
             <ul class="menu-nav">
-                <li><a href="#">Login</a></li>
+                <li><a href="user-page.html" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Login</a></li>
                 <li><a href="aboutUs.html">About us</a></li>
                 <li><a href="#">Status of your service</a></li>
             </ul>
@@ -46,7 +122,7 @@
         <!-- CONTENEDORES LADO DERECHO -->
         <div class="container-login">
             <div class="section-login">
-                <a href="#" class="login">
+                <a class="login" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                     <h1>¡Request your service!</h1>
                 </a>
             </div>
@@ -76,10 +152,13 @@
     <!-- <script src="./js/app.js"></script>
     <script src="./js/data.js"></script> -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://apis.google.com/js/api:client.js"></script>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
+        <script src="./js/login.js"></script>
     <script src="/js/slider.js"></script>
     <script src="./js/menu.js"></script>
 </body>
