@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./styles/login.css">
+</head>
+<body>
+    <!-- In the callback, you would hide the gSignInWrapper element on a
+        successful sign in -->
+        <div id="gSignInWrapper">
+            <span class="label">Sign in with:</span>
+            <div id="customBtn" class="customGPlusSignIn">
+                <span class="icon"></span>
+                <span class="buttonText">Google</span>
+            </div>
+        </div>
+        <div id="name"></div>
+        <script src="https://apis.google.com/js/api:client.js"></script>
+        <script src="./js/login.js"></script>
+</body>
+</html>

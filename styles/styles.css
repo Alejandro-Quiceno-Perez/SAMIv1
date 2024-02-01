@@ -182,7 +182,6 @@
 }
 
 /* ESTILOS CONTENEDOR LOGIN */
-
 .container-login {
   width: 40%;
 }
@@ -266,7 +265,6 @@ img {
 
 
 /* ADMIN PAGINA */
-
 .container-admin {
   height: 100vh;
   background-color: aqua;
