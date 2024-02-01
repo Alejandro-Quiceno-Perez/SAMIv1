@@ -262,33 +262,54 @@ img {
 
 /* SLIDE DE EMERGENCIA */
 
-
-
-
-.color-1 {
-  border-radius: 50px;
-  background-color: #1803ff;
+.box-slider {
+  padding: 20px 20px 20px 30px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #a09f9f;
+  display: flex;
+  align-items: center;
 }
 
-.color-2 {
-  border-radius: 50px;
-  background-color: #29ff03;
+.box-slider.color-1 {
+  background-color: #0051ff;
 }
 
-.color-3 {
-  border-radius: 50px;
-  background-color: #fff203;
+.box-slider.color-2 {
+  background-color: #00ff08;
 }
 
-.color-4 {
-  border-radius: 50px;
-  background-color: #ff9d00;
+.box-slider.color-3 {
+  background-color: #ffee00;
+}
+.box-slider.color-4 {
+  background-color: #ff6a00;
+}
+.box-slider.color-5 {
+  background-color: #ff0000;
 }
 
-.color-5 {
+.box-slider .slider {
+  height: 5px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.box-slider .slider input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  background: none;
+  -webkit-appearance: none;
   
-  border-radius: 50px;
-  background-color: #d00000;
+}
+
+
+.box-slider .value {
+  font-size: 30px;
+  font-weight: 600;
+  width:55px ;
+  text-align: center;
 }
 
 /* FIN SLIDE DE EMERGENCIA */
@@ -313,3 +334,6 @@ img {
 .slide:first-child {
   opacity: 1;
 }
+
+
+/* admin page */
