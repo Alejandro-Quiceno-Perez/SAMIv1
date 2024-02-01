@@ -23,15 +23,14 @@
   align-items: center;
 }
 
-/* ESTILOS HEADER - LOGO, USUARIO Y MENU HAMBURGUESA */
+/* ESTILOS HEADER - LOGO Y NAVBAR */
 
-/* Contenedor global nav */
 .container-header {
-/*   background: yellow; */
   position: fixed;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
+  padding: 0 45px;
+  align-items: center;
   width: 100vw;
   height: 10vh;
   z-index: 1;
@@ -41,227 +40,102 @@
   display: flex;
   align-items: center;
   height: 100%;
-/*   background-color: violet; */
 }
 
 .logo img {
-/*   background-color: rgb(182, 176, 182); */
-  width: 100%;
-  height: 100%;
+  width: 85%;
+  height: 85%;
   object-fit: cover;
-  margin-left: 35px;
-}
-
-/* PANEL DE OPCIONES */
-
-.options-panel {
-  width: 10%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
 }
 
 
-/* CREDENCIALES */
-/* Icono página de inicio */
-.user  {
-  width: 45%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: aquamarine;
-}
-
-.user i {
-  font-size: 30px;
-}
-
-/* Ventana emergente log in*/
-#abrir_caja {
-  background: #26aef2;
-  padding: 10px 25px;
-  color: #ffffff;
-  border-radius: 50px;
-}
-#cerrar_caja {
-  float: right;
-}
-#abrir_caja , #cerrar_caja {
-cursor: pointer;
-}
-.activo {
-  opacity:1 !important;
-  pointer-events:auto !important;
-}
-.ventana_emergente_fondo {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  background-color: rgba(0,0,0,.8);
-  position:fixed;
-  top:0;
-  right:0;
-  bottom:0;
-  left:0;
-  opacity:0;
-  pointer-events:none;
-  transition: all 0.5s;
-  z-index: 100;
-}
-
-.ventana_emergente {
-  width: 70%;
-  height: 70%;
-  background-color:#fff;
-  /* max-width:500px; RESPONSIVE */
-  padding: 15px 20px;
-  margin: auto;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-/* Panel izquierdo credenciales */
-.left-credentials {
-  width: 50%;
-  height: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.right-credentials {
-  width: 50%;
-  height: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-
-
-/* MENU HAMBURGUESA */
-.hamburger{
-  position:fixed;
-  background-color:transparent;
-	right: 35px;
-	top:20px;
-	height:30px;
-	width:30px;
-	padding:20px 20px;
-	-webkit-transform:translate3d(0, 0, 0);
-	transform:translate3d(0, 0, 0);
-	-webkit-transition:-webkit-transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
-	transition:transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
-	z-index:1002;
-	cursor:pointer;
-	-webkit-user-select:none;
-	-moz-user-select:none;
-	-ms-user-select:none;
-	user-select:none
-}
-
-.hamburger.is-active{
-  background-color:none;
-}
-
-._layer{
-	background: white;
-	margin-bottom:4px;
-	border-radius:2px;
-	width:28px;
-	height:4px;
-	opacity:1;
-	-webkit-transform:translate3d(0, 0, 0);
-	transform:translate3d(0, 0, 0);
-	-webkit-transition:all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
-	transition:all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
-}
-
-.hamburger:hover .-top{
-  -webkit-transform:translateY(-100%);
-	-ms-transform:translateY(-100%);
-	transform:translateY(-100%);
-}
-
-.hamburger:hover .-bottom{
-	-webkit-transform:translateY(50%);
-	-ms-transform:translateY(100%);
-	transform:translateY(100%);
-}
-
-.hamburger.is-active .-top{
-	-webkit-transform:translateY(200%) rotate(45deg) !important;
-	-ms-transform:translateY(200%) rotate(45deg) !important;
-	transform:translateY(200%) rotate(45deg) !important;
-  background-color: var(--dark);
-}
-
-.hamburger.is-active .-mid{
-  opacity:0;
-}
-
-.hamburger.is-active .-bottom{
-	-webkit-transform:translateY(-200%) rotate(135deg) !important;
-	-ms-transform:translateY(-200%) rotate(135deg) !important;
-	transform:translateY(-200%) rotate(135deg) !important;
-  background-color: var(--dark);
-  
-}
-
-.menuppal.is_active{
-  transform: translate3d(0px, 0px, 0px);
-}
-
-.menuppal{
-  width: 100%;
-  height: 100%;
-  right: 0;
-  overflow-y: scroll;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  background-color: white;
-  transform: translate3d(0px, -100%, 0px);
-  transition: transform 0.35s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
-  z-index: 1;  
-}
-
-.menuppal ul{
-  margin-top: 12rem;
-}
-
-.menuppal ul li { 
+.menu-nav {
   list-style: none;
-	text-align:center;
-	font-family: Verdadna, Arial, Helvetica;
-  
-	font-size:1.5rem;
-	line-height:3em;
-	height:3em;
-  color:black;
-	text-transform:none;
-	font-weight:bold;
+  display: flex;
+  gap: 5px;
 }
 
-.menuppal ul li a{
-  text-decoration:none;
-  color:var(--blue);
+.menu-nav li a {
+  text-decoration: none;
+  color: var(--white);
 }
 
-.menuppal ul li a:hover{
-  text-decoration:none;
-  color:black;
+.open-menu,
+.close-menu {
+  border: none;
+  background: none;
+  display: block;
+  padding: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+
+  background-color: #ffffff6e;
+  border-radius: 50%;
+
+}
+
+.open-menu i,
+.close-menu i {
+  font-size: 30px;
+  color: var(--white);
+  transition: .2s;
+}
+
+.close-menu i:hover {
+  color: var(--red);
+}
+
+.open-menu i:hover {
+  color: var(--dark);
+}
+
+.close-menu:hover {
+  transform: scale(1.3);
+
+}
+
+.open-menu:hover {
+  transform: scale(1.3);
+}
+
+.menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+
+.menu button {
+  position: absolute;
+  top: 30px;
+  right: 45px;
+  padding: 5px;
+}
+
+.menu-nav {
+  width: 100vw;
+  flex-direction: column;
+  background-color: #000000;
+  bottom: 0;
+  padding: 10px;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.menu.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu-nav li {
+  padding: 20px;
 }
 
 /* MENU HAMBURGUESA */
-
-
-
 
 /* ESTILOS CONTENEDOR MAPA */
 .container-map {
@@ -274,7 +148,6 @@ cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: -10px -2px 3px var(--dark) ;
 }
 
 .map iframe {
@@ -286,7 +159,6 @@ cursor: pointer;
   border: 0;
   text-decoration: none;
 }
-
 
 .info {
   height: 20vh;
@@ -309,8 +181,8 @@ cursor: pointer;
   font-size: 25px;
 }
 
-
 /* ESTILOS CONTENEDOR LOGIN */
+
 .container-login {
   width: 40%;
 }
@@ -320,7 +192,6 @@ cursor: pointer;
   height: 50vh;
   position: relative;
   cursor: pointer;
-  
 }
 
 .login {
@@ -337,7 +208,7 @@ cursor: pointer;
 }
 
 .login h1 {
-  font-size:25px;
+  font-size: 25px;
   font-weight: lighter;
 }
 
@@ -347,7 +218,7 @@ cursor: pointer;
   display: inline-block;
   height: 1px;
   margin-right: 10px;
-  transition: all .2s cubic-bezier(.25,.8,.25,1);
+  transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
   width: 0;
 }
 
@@ -372,7 +243,7 @@ cursor: pointer;
 }
 
 img {
-  object-fit:cover;
+  object-fit: cover;
   width: 100%;
   height: 100%;
   opacity: 0.6;
@@ -381,7 +252,7 @@ img {
 
 .about {
   position: absolute;
-  bottom: 0;
+  bottom: 10px;
   padding: 20px;
   text-decoration: none;
   color: var(--white);
@@ -394,10 +265,69 @@ img {
 }
 
 
-/* Responsive ventana emergente credenciales */
-/* @media (max-width: 768px) {
-  .ventana_emergente {
-  max-width: 300px;
-      margin: 20% auto;
-  }
-} */
+/* ADMIN PAGINA */
+
+.container-admin {
+  height: 100vh;
+  background-color: aqua;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.services {
+  width: 70%;
+  height: 100%;
+  background-color: aquamarine;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.container-requests {
+  width: 100%;
+  height: 70%;
+
+  background-color: chocolate;
+  position: relative;
+}
+
+.container-services {
+  width: 100%;
+  height: 30%;
+  background-color: chartreuse;
+  position: relative;
+}
+
+
+.controls {
+  background-color: crimson;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.historic {
+  background-color: blueviolet;
+  height: 50vh;
+  overflow: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  margin: 15px;
+  top: 25px;
+
+}
+
+.ambulance {
+  background-color: cadetblue;
+  height: 50vh;
+  position: relative;
+
+}

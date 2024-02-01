@@ -1,31 +1,13 @@
-// selector
-var menu = document.querySelector('.hamburger');
+const btnOpen = document.querySelector("#open-menu");
+const btnClose = document.querySelector("#close-menu");
+const nav = document.querySelector("#menu");
 
-// method
-function toggleMenu(event) {
-    this.classList.toggle('is-active');
-    document.querySelector(".menuppal").classList.toggle("is_active");
-    event.preventDefault();
-}
-
-// event
-menu.addEventListener('click', toggleMenu, false);
-
-
-// PRUEBA CREDENCIALES
-
-const abrir_caja = document.getElementById('abrir_caja');
-const cerrar_caja = document.getElementById('cerrar_caja');
-const caja = document.getElementById('caja');
-
-abrir_caja.addEventListener('click', function () {
-    caja.classList.add('activo');
+btnOpen.addEventListener("click", (e) => {
+    e.preventDefault();
+    nav.classList.add("visible");
 });
 
-cerrar_caja.addEventListener('click', function () {
-    caja.classList.remove('activo');
-});
-
-
-
-  
+btnClose.addEventListener("click", (e) => {
+    e.preventDefault();
+    nav.classList.remove("visible");
+})

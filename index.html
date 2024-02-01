@@ -2,101 +2,32 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AMBSYNC</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-    <link rel="stylesheet" href="./styles/styles.css" />
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAMI</title>
+    <link rel="stylesheet" href="./styles/resetStyles.css">
+    <link rel="shortcut icon" href="./img/ambulancia.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./styles/styles.css">
 </head>
 
 <body>
-
     <!-- ESTILOS HEADER - LOGO Y NAVBAR -->
     <header class="container-header">
         <div class="logo">
-            <img src="./img/logo-ambsync.png" alt="" />
+            <img src="./images/logo3BG.png" alt="" />
         </div>
-        <div class="options-panel">
-
-            <!-- Usuario -->
-            <!-- <div class="user">
-                <i class='bx bxs-user-circle'></i>
-            </div> -->
-
-            <!-- PRUEBA -->
-            <button id="abrir_caja"> 
-                <i class='bx bxs-user-circle'></i>
-             </button>
-
-            <div id="caja" class="ventana_emergente_fondo">
-                <div class="ventana_emergente">
-                    <a id="cerrar_caja">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-                            <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
-                        </svg>
-                    </a>
-
-                    <!-- Modal  credenciales izquierdo -->
-                     <div class="left-credentials">
-                        <div class="logo">
-                            <img src="./img/logo-ambsync.png" alt="" />
-                        </div>
-
-                        <div class="login-box">
-                            <button class="login-button">log In</button>
-                            <p>Recover Account <a href="#">Here</a></p>
-                        </div>
-                     </div>
-
-
-                    <!-- Modal  credenciales derecho -->
-                     <div class="right-credentials">
-                        <h1>Create Account</h1>
-                        <div class="redes login">
-                            <!-- Google -->
-                            <div class="google-login">
-                              
-                            </div>
-
-                            <!-- Facebook -->
-                            <div class="facebook">
-
-                            </div>
-                        </div>
-
-                        <div class="formulario">
-                            
-                        </div>
-                     </div>
-
-
-                </div>
-            </div>
-
-
-
-            <!-- Hamburguesa -->
-            <nav class="menu-nav">
-                <div class="hamburger">
-                    <div class="_layer -top"></div>
-                    <div class="_layer -mid"></div>
-                    <div class="_layer -bottom"></div>
-                </div>
-                
-                <nav class="menuppal">
-                    <ul>
-                        <li><a href="#">Opcion 1</a></li>
-                        <li><a href="#">Opcion 2</a></li>
-                        <li><a href="#">Opcion 3</a></li>
-                        <li><a href="#">Opcion 4</a></li>
-                    </ul>
-                </nav>
-            </nav>
-        </div>
-
+        <button class="open-menu" id="open-menu"><i class="bi bi-list"></i></button>
+        <nav class="menu" id="menu">
+            <button class="close-menu" id="close-menu"><i class="bi bi-x-lg"></i></button>
+            <ul class="menu-nav">
+                <li><a href="#">Login</a></li>
+                <li><a href="aboutUs.html">About us</a></li>
+                <li><a href="#">Status of your service</a></li>
+            </ul>
+        </nav>
     </header>
+    
     <section class="container-principal">
         <!-- CONTENEDOR DEL MAPA -->
         <div class="container-map">
@@ -106,7 +37,7 @@
                     loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div class="info">
-                <h1>AMBSYNC</h1>
+                <h1>SAMI</h1>
                 <h3>Your health, our prurpose</h3>
             </div>
         </div>
@@ -137,8 +68,3 @@
     <script src="./js/data.js"></script> -->
     <script src="./js/menu.js"></script>
 </body>
-
-</html>
-
-
-<p>hola</p>

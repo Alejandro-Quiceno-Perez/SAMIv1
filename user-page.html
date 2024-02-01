@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SAMI - User Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <link rel="stylesheet" href="./styles/styles.css" />
+
+  <link rel="icon" type="image/x-icon" href="./img/logos/logo5BG.png" />
+</head>
+
+<body>
+  <!-- ESTILOS HEADER - LOGO Y NAVBAR -->
+  <header class="container-header">
+    <div class="logo">
+      <img src="./img/logos/logo3BG.png" alt="" />
+    </div>
+
+    <button class="open-menu" id="open-menu">
+      <i class="bi bi-list"></i>
+    </button>
+
+    <nav class="menu" id="menu">
+      <button class="close-menu" id="close-menu">
+        <i class="bi bi-x-lg"></i>
+      </button>
+      <ul class="menu-nav">
+        <li><a href="#">Opcion 1</a></li>
+        <li><a href="#">Opcion 2</a></li>
+        <li><a href="#">Opcion 3</a></li>
+        <li><a href="#">Opcion 4</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="container-principal">
+    <div class="container-secundary m-5 d-grid gap-3 p-5 w-100">
+      <form>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Correo Electrónico</label>
+          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" />
+        </div>
+
+        <label for="exampleFormControlInput1">Teléfono Celular</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="+57 300-1234567" />
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Dirección:</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Número de pacientes</label>
+          <select class="form-control" id="exampleFormControlSelect1">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+
+        <!-- slider bar inicio -->
+        <div class="form-group">
+          <label for="customRange1" class="form-label">Grado de la emergencia</label>
+          <input type="range" class="custom-range" id="custom-slider" min="1" max="5" step="1" value="5" />
+          <p class="custom-range" id="slider-value">GRADO: 5</p>
+        </div>
+
+        <!-- slide bar fin -->
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Descripción de la emergencia:</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+        </div>
+      </form>
+      <button type="button" class="btn btn-danger">solicitar</button>
+    </div>
+
+    <!-- CONTENEDORES LADO DERECHO -->
+    <div class="container-login w-30">
+      <div class="section-login">
+        <a href="#" class="login"> </a>
+      </div>
+      <div class="section-about">
+        <div class="img">
+          <img src="./img/ambulance.jpg" alt="ambulance" />
+        </div>
+        <a href="#" class="about">
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Consequatur eveniet corrupti atque perferendis reprehenderit
+            eligendi, excepturi error incidunt ad distinctio. A, atque
+            eligendi sapiente corrupti provident exercitationem explicabo
+            debitis eum?
+          </p>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="/js/slider.js"></script>
+  <!-- scripts -->
+</body>
+
+</html>
