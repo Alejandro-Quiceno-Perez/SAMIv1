@@ -1,5 +1,121 @@
+/* ESTILOS HEADER - LOGO Y NAVBAR */
+
+.container-header {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 45px;
+  align-items: center;
+  width: 100vw;
+  height: 10vh;
+  z-index: 1;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75%;
+  padding:0 15px;
+  margin-top: -25px;
+  margin-left: -35px;
+  background-color:white;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 1px 1px  10px rgba(0, 0, 0, 0.343);
+}
+
+.logo img {
+  width: 100%;
+  height: 55%;
+  object-fit: cover;
+}
+
+/* MENU HAMBURGUESA */
+
+
+.menu-nav {
+  list-style: none;
+  display: flex;
+  gap: 5px;
+}
+
+.menu-nav li a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+.open-menu,.close-menu {
+  border: none;
+  background: none;
+  display: block;
+  padding: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.open-menu i,
+.close-menu i {
+  font-size: 30px;
+  color: var(--white);
+  transition: .2s;
+}
+
+.close-menu i:hover{
+  color: var(--red);
+}
+
+.open-menu i:hover{
+  color: var(--dark);
+}
+
+.close-menu:hover {
+  transform:scale(1.3);
+  
+}
+.open-menu:hover {
+  transform:scale(1.3);
+}
+
+.menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  visibility: hidden ;
+  transition: 0.3s;
+}
+
+.menu button {
+  position:absolute;
+  top: 30px;
+  right: 45px;
+  padding: 5px;
+}
+
+.menu-nav {
+  width: 100vw;
+  flex-direction: column;
+  background-color: #000000;
+  bottom: 0;
+  padding: 10px;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.menu.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu-nav li {
+  padding: 20px;
+}
+
+/* MENU HAMBURGUESA */
+
 .container-fluid {
-  background-color: aqua;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -8,7 +124,7 @@
 .container-left {
   width: 100%;
   height: 100vh;
-  background-color: yellow;
+  background-color: #d00000;
 }
 
 .container-left .container-text,
@@ -32,11 +148,51 @@
   width: 100%;
   text-align: center;
   height: 100vh;
-  background-color: rgb(55, 50, 205);
+  background-color: #dd1313;
 }
 
+.container-center .container,
+.container-left .container {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+}
+
+.container-center .container h3 {
+  margin-bottom: 20px;
+  font-size: 25px;
+}
+
+.container-center .container .container-email p {
+  margin-bottom: 20px;
+}
+
+.container-center .container .container-email ul {
+  display: flex;
+  list-style: none;
+}
+
+.container-email ul li a {
+  text-decoration: none;
+  margin: 0 15px;
+}
+
+
+
 .container-center .container-text {
-    
+  height: 50%;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  padding: 60px;
+  
+}
+
+.container-center .container-text h2 {
+  font-size: 40px;
+  text-transform: uppercase;
 }
 
 /* rigth */
@@ -44,5 +200,5 @@
   width: 100%;
   text-align: center;
   height: 100vh;
-  background-color: rgba(255, 7, 7, 0.897);
+  background-color: #d00000;
 }

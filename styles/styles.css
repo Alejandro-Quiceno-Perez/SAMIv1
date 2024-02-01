@@ -221,8 +221,8 @@
   overflow: hidden;
 }
 
+/*   position: absolute;
 .img {
-  position: absolute;
   height: 100%;
 }
 
@@ -235,7 +235,28 @@
 }
 
 
+ */
 
+#imageSlider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 3s ease-in-out;
+  overflow-x: hidden;
+}
+
+/* Mostrar la primera imagen al cargar la página */
+.slide:first-child {
+  opacity: 1;
+}
 .about { 
   position: absolute;
   bottom: 10px;

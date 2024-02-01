@@ -6,19 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAMI</title>
     <link rel="shortcut icon" href="./img/ambulancia.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="/styles/resetStyles.css">
     <link rel="stylesheet" href="/styles/aboutUs.css">
 </head>
 
 <body>
+    <!-- ESTILOS HEADER - LOGO Y NAVBAR -->
+    <header class="container-header">
+        <div class="logo">
+            <img src="./img/logo3BG.png" alt="" />
+        </div>
+        <button class="open-menu" id="open-menu"><i class="bi bi-list"></i></button>
+        <nav class="menu" id="menu">
+            <button class="close-menu" id="close-menu"><i class="bi bi-x-lg"></i></button>
+            <ul class="menu-nav">
+                <li><a href="index.html">SAMI</a></li>
+                <li><a href="aboutUs.html">About us</a></li>
+                <li><a href="#">Status of your service</a></li>
+            </ul>
+        </nav>
+    </header>
     <div class="container-fluid">
         <div class="container-left">
+            <div class="container">
+                <p class="vision-text">Revolucionar la respuesta a emergencias médicas con tecnología, brindando rapidez y seguridad, liderando el sector con innovación constante</p>
+            </div>
             <div class="container-text">
                 <h2>Vision</h2>
             </div>
         </div>
         <div class="container-center">
-            <div class="container-text">
+            <div class="container">
                 <h3>Contact us</h3>
                 <div class="container-email">
                     <p>example@email.com</p>
@@ -28,9 +47,9 @@
                         <li><a href="#">Twitter</a></li>
                     </ul>
                 </div>
-                <div class="container-text">
-                    <h2>About us</h2>
-                </div>
+            </div>
+            <div class="container-text">
+                <h2>About us</h2>
             </div>
         </div>
         <div class="container-rigth">
@@ -39,6 +58,7 @@
             </div>
         </div>
     </div>
+    <script src="./js/menu.js"></script>
 </body>
 
 </html>
