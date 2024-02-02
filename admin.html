@@ -1,164 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SAMI</title>
-    <link rel="stylesheet" href="./styles/resetStyles.css" />
-    <link rel="shortcut icon" href="./img/ambulancia.png" type="image/x-icon" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SAMI - ADMIN</title>
+  <link rel="stylesheet" href="./styles/resetStyles.css" />
+  <link rel="stylesheet" href="./styles/navbar.css">
+  <link rel="shortcut icon" href="./img/ambulancia.png" type="image/x-icon" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./styles/styles.css" />
-  </head>
+</head>
 
-  <body>
-    <!-- HEADER Y NAVBAR -->
-    <header class="container-header">
-      <div class="logo">
-        <img src="./images/logo3BG.png" alt="" />
-      </div>
-      <button class="open-menu" id="open-menu">
-        <i class="bi bi-list"></i>
-      </button>
-      <nav class="menu" id="menu">
-        <button class="close-menu" id="close-menu">
-          <i class="bi bi-x-lg"></i>
-        </button>
-        <ul class="menu-nav">
-          <li><a href="#">Login</a></li>
-          <li><a href="aboutUs.html">About us</a></li>
-          <li><a href="#">Status of your service</a></li>
-        </ul>
-      </nav>
-    </header>
+<body>
+  <header class="container-header">
+    <div class="logo">
+      <img src="./img/logo3BG.png" alt="" />
+    </div>
+    <button class="open-menu" id="open-menu"><i class="bi bi-list"></i></button>
+    <nav class="menu" id="menu">
+      <button class="close-menu" id="close-menu"><i class="bi bi-x-lg"></i></button>
+      <ul class="menu-nav">
+        <li><a href="user-page.html" data-bs-toggle="modal" data-bs-target="#modalLogin">Login</a></li>
+        <li><a href="aboutUs.html">About us</a></li>
+        <li><a href="#">Status of your service</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <section class="container-admin">
-      <!-- CONTENEDOR IZQUIERDO -->
-      <div class="services">
-        <!-- Solicitudes-->
-        <div class="container-requests">
-          <div class="card text-center">
-            <div class="card-header">
-              <ul class="nav nav-tabs card-header-tabs">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="true" href="#"
-                    >Asignación de Servicio</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" aria-current="true" href="#"
-                    >Servicios Activos</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" aria-current="true" href="#"
-                    >Servicios Finalizados</a
-                  >
-                </li>
-              </ul>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">
-                With supporting text below as a natural lead-in to additional
-                content.
-              </p>
-            </div>
-          </div>
-        </div>
+  
 
-        <!-- Servicios activos -->
-        <div class="container-services">
-          <select class="form-select" aria-label="Default select example">
-            <option selected>Open this select menu</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
-        </div>
-      </div>
+  <script src="/js/menu.js"></script>
+</body>
 
-      <!-- CONTENEDOR DERECHO -->
-      <div class="controls">
-        <!-- Historial -->
-        <div class="historic">
-          <div class="card">
-            <div class="card-header">Servicio #</div>
-            <div class="card-body">
-              <h5 class="card-title">Alejandro Quiceno</h5>
-              <p class="card-text">
-                Número de pacientes: 1 <br />
-                Dirección de servicio: Calle feliz :) <br />
-                Grado de la emergencia: 3 <br />
-                Descripción de la emergencia: Le enterre un cuchillo a mi novia
-                infiel.
-              </p>
-              <a href="#" class="btn btn-success">Aceptar</a>
-              <a href="#" class="btn btn-danger">Denegar</a>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-header">Servicio #</div>
-            <div class="card-body">
-              <h5 class="card-title">Alejandro Quiceno</h5>
-              <p class="card-text">
-                Número de pacientes: 1 <br />
-                Dirección de servicio: Calle feliz :) <br />
-                Grado de la emergencia: 3 <br />
-                Descripción de la emergencia: Le enterre un cuchillo a mi novia
-                infiel.
-              </p>
-              <a href="#" class="btn btn-success">Aceptar</a>
-              <a href="#" class="btn btn-danger">Denegar</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Ambulancias disponibles -->
-        <div class="ambulance overflow-auto">
-          <h1>GESTIÓN DE AMBULANCIAS</h1>
-
-          <div class="card text-bg-secondary mb-3" style="max-width: 18rem">
-            <div class="card-header">No Disponible</div>
-            <div class="card-body">
-              <h5 class="card-title">Secondary card title</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-          </div>
-
-          <div class="card text-bg-warning mb-3" style="max-width: 18rem">
-            <div class="card-header">Servicio Activo</div>
-            <div class="card-body">
-              <h5 class="card-title">Warning card title</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-          </div>
-
-          <div class="card text-bg-light mb-3" style="max-width: 18rem">
-            <div class="card-header">Disponible</div>
-            <div class="card-body">
-              <h5 class="card-title">Ambulancia Medicalizada</h5>
-              <p class="card-text">
-                Nombre: Armando Bronca Segura <br />
-                Identificación: 123456 <br />
-                Placa: ABC123 <br />
-                Paramédicos: 1
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </body>
 </html>
