@@ -1,54 +1,36 @@
 /* LOGIN GOOGLE */
-#customBtn {
+.customGPlusSignIn {
   display: flex;
   align-items: center;
   justify-content: center;
   background: white;
   color: #444;
-  width: 190px;
+  width: 100%;
   border-radius: 5px;
-  border: thin solid #888;
-  box-shadow: 1px 1px 1px grey;
-  white-space: nowrap;
+  border: 1px solid #ccc4c48f;
+  transition: .2s;
 }
-  
 
-#customBtn:hover {
+.customGPlusSignIn:hover {
   cursor: pointer;
+  background-color: #ccc4c48f;
 }
 
-span.label {
-  font-family: serif;
-  font-weight: normal;
-  display: flex;
-  align-items: center;
+.icon {
+  height: 40px;
 }
 
-span.icon {
-  /* background: url("/img/google.png") transparent 5px 50% no-repeat; */
-  display: flex;
-  vertical-align: middle;
-  width: 42px;
-  height: 42px;
-  padding: 4px;
+
+.icon img {
+  padding: 10px;
+  width: 100%;
+  height: 100%;
 }
 
 span.buttonText {
-  display: flex;
-  vertical-align: middle;
-  padding-left: 42px;
+  
+  padding-left: 30px;
   padding-right: 42px;
   font-size: 14px;
   font-weight: bold;
-  font-family: 'Roboto', sans-serif;
-  align-items: center;
-}
-
-span img {
-  width: 100%;
-}
-
-#gSignInWrapper{
-display: flex !important;
-gap: 25px;
 }
