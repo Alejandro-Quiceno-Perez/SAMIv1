@@ -46,34 +46,48 @@
     <section class="container-principal">
       <div class="container-secundary m-5 d-grid gap-3 p-5 w-100">
         <form>
+          <!-- name -->
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Nombre Completo</label>
+            <input
+              type="text"
+              class="form-control"
+              id="user-name"
+              placeholder="Nombres y apellidos" required
+            />
+          </div>
+          <!-- mail -->
           <div class="form-group">
             <label for="exampleFormControlInput1">Correo Electrónico</label>
             <input
               type="email"
               class="form-control"
-              id="exampleFormControlInput1"
-              placeholder="name@example.com"
+              id="user-email"
+              placeholder="name@example.com" required
             />
           </div>
+          <!-- phone -->
 
           <label for="exampleFormControlInput1">Teléfono Celular</label>
           <input
             type="email"
             class="form-control"
-            id="exampleFormControlInput1"
-            placeholder="+57 300-1234567"
+            id="user-phone"
+            placeholder="+57 300-1234567" required
           />
+          <!-- direccion -->
           <div class="form-group">
             <label for="exampleFormControlTextarea1">Dirección:</label>
             <textarea
               class="form-control"
-              id="exampleFormControlTextarea1"
-              rows="2"
+              id="user-address"
+              rows="2" required
             ></textarea>
           </div>
+          <!-- num pacientes -->
           <div class="form-group">
             <label for="exampleFormControlSelect1">Número de pacientes</label>
-            <select class="form-control" id="exampleFormControlSelect1">
+            <select class="form-control" id="patients" required>
               <option>1</option>
               <option>2</option>
               <option>3</option>
@@ -89,7 +103,7 @@
           <div class="container-box-slider">
             <div class="box-slider">
               <div class="slider">
-                <input type="range" class="range-input" min="0" max="100" value="0" />
+                <input type="range" class="range-input" min="0" max="100" value="0" id="emergency" required/>
                 <div class="value">100</div>
               </div>
             </div>
@@ -103,12 +117,12 @@
             >
             <textarea
               class="form-control"
-              id="exampleFormControlTextarea1"
-              rows="5"
+              id="emerg-description"
+              rows="5" required
             ></textarea>
           </div>
         </form>
-        <button type="button" class="btn btn-danger">solicitar</button>
+        <button type="button" class="btn btn-danger" id="btn-request">solicitar</button>
       </div>
 
       <!-- CONTENEDORES LADO DERECHO -->
@@ -141,8 +155,9 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="/js/slider.js"></script>
-    <script src="/js/blue-zone.js"></script>
+    <script src="./js/user-page.js/slider.js"></script>
+    <script src="./js/user-page.js/app.js"></script>
+    <script src="./js/blue-zone.js"></script>
     <!-- scripts -->
   </body>
 </html>
