@@ -2,159 +2,96 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SAMI - User Page</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-  <!-- Map Box -->
-  <!-- <link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet" /> -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SAMI - User Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/user page/style.css" />
+    <link rel="stylesheet" href="./styles/hamburguesa.css" />
 
-  <link rel="stylesheet" href="./styles/styles.css" />
-
-  <link rel="icon" type="image/x-icon" href="./img/logos/logo5BG.png" />
+    <link rel="icon" type="image/x-icon" href="./images/logo5BG.png">
+</head>
 </head>
 
 <body>
-  <!-- ESTILOS HEADER - LOGO Y NAVBAR -->
-  <header class="container-header">
-    <div class="logo">
-      <img src="./img/logos/logo3BG.png" alt="" />
-    </div>
+    <!-- ESTILOS HEADER - LOGO Y NAVBAR -->
+    <header class="container-header">
+        <div class="logo">
+            <img src="./images/logo3BG.png" alt="" />
+        </div>
+        <nav class="menu">
 
-    <button class="open-menu" id="open-menu">
-      <i class="bi bi-list"></i>
-    </button>
-
-      <nav class="menu" id="menu">
-        <button class="close-menu" id="close-menu">
-          <i class="bi bi-x-lg"></i>
-        </button>
-        <ul class="menu-nav">
-          <li><a href="#">Opcion 1</a></li>
-          <li><a href="#">Opcion 2</a></li>
-          <li><a href="#">Opcion 3</a></li>
-          <li><a href="#">Opcion 4</a></li>
-        </ul>
-      </nav>
+            <button class="open-menu">Abrir</button>
+            <ul class="menu-nav">
+                <button>Cerrar</button>
+                <li><a href="#">Opcion 1</a></li>
+                <li><a href="#">Opcion 2</a></li>
+                <li><a href="#">Opcion 3</a></li>
+                <li><a href="#">Opcion 4</a></li>
+            </ul>
+        </nav>
     </header>
     <section class="container-principal">
-      <div class="container-secundary m-5 d-grid gap-3 p-5 w-100">
-        <form>
-          <!-- name -->
-          <div class="form-group">
-            <label for="exampleFormControlInput1">Nombre Completo</label>
-            <input
-              type="text"
-              class="form-control"
-              id="user-name"
-              placeholder="Nombres y apellidos"
-              required
-            />
-          </div>
-          <!-- mail -->
-          <div class="form-group">
-            <label for="exampleFormControlInput1">Correo Electrónico</label>
-            <input
-              type="email"
-              class="form-control"
-              id="user-email"
-              placeholder="name@example.com"
-              required
-            />
-          </div>
-          <!-- phone -->
 
-          <label for="exampleFormControlInput1">Teléfono Celular</label>
-          <input
-            type="email"
-            class="form-control"
-            id="user-phone"
-            placeholder="(300) 123 45 67"
-            required
-          />
-          <!-- direccion -->
-          <div class="form-group">
-            <label for="exampleFormControlTextarea1">Dirección:</label>
-            <textarea
-              class="form-control"
-              id="user-address"
-              rows="2"
-              required
-            ></textarea>
-          </div>
-          <!-- num pacientes -->
-          <div class="form-group">
-            <label for="exampleFormControlSelect1">Número de pacientes</label>
-            <select class="form-control" id="patients" required>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>+ de 5</option>
-            </select>
-          </div>
+        <div class="container-secundary gap-3">
 
-          <!-- slider bar inicio -->
-          <label for="exampleFormControlTextarea1"
-            >Grado de la emergencia:
-          </label>
-          <div class="container-box-slider">
-            <div class="box-slider">
-              <div class="slider">
-                <input
-                  type="range"
-                  class="range-input"
-                  min="0"
-                  max="100"
-                  value="0"
-                  id="emergency"
-                  required
-                />
-                <div class="value">100</div>
-              </div>
+            <form>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1"
+                        placeholder="name@example.com">
+                </div>
+                <label for="exampleFormControlInput1">Teléfono Celular</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="+57 300-1234567">
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Número de pacientes</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="customRange2" class="form-label">Nivel de la emergencia</label>
+                    <input type="range" class="form-range" min="0" max="5" id="customRange2">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Descripción de la emergencia:</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+
+            </form>
+            <button type="button" class="btn btn-danger">solicitar</button>
+        </div>
+        <div class="info_container">
+            <img src="./images/grado.png" class="grades-info" alt="grados">
+        </div>
+        </div>
+        <!-- CONTENEDORES LADO DERECHO -->
+        <div class="container-login">
+            <div class="section-login">
+                <a href="#" class="login">
+
+                </a>
             </div>
-          </div>
-
-          <!-- slide bar fin -->
-          <div class="form-group">
-            <label for="exampleFormControlTextarea1"
-              >Descripción de la emergencia:</label
-            >
-            <textarea
-              class="form-control"
-              id="emerg-description"
-              rows="5"
-              required
-            ></textarea>
-          </div>
-        </form>
-        <button type="button" class="btn btn-danger" id="btn-request">
-          solicitar
-        </button>
-      </div>
-
-      <!-- CONTENEDORES LADO DERECHO -->
-      <div class="container-login w-30">
-        <div class="section-login">
-          <a href="#" class="login"> </a>
+            <div class="section-about">
+                <div class="img">
+                    <img src="./img/ambulance.jpg" alt="ambulance" />
+                </div>
+                <a href="#" class="about">
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                        Consequatur eveniet corrupti atque perferendis reprehenderit
+                        eligendi, excepturi error incidunt ad distinctio. A, atque
+                        eligendi sapiente corrupti provident exercitationem explicabo
+                        debitis eum?
+                    </p>
+                </a>
+            </div>
         </div>
-        <div class="section-about">
-          <div class="img">
-            <img src="./img/ambulance.jpg" alt="ambulance" />
-          </div>
-          <a href="#" class="about">
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Consequatur eveniet corrupti atque perferendis reprehenderit
-              eligendi, excepturi error incidunt ad distinctio. A, atque
-              eligendi sapiente corrupti provident exercitationem explicabo
-              debitis eum?
-            </p>
-          </a>
-        </div>
-      </div>
     </section>
     <!-- scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
