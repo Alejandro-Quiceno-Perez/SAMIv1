@@ -1,0 +1,28 @@
+.container-info {
+  /* background-color: violet; */
+  height: 100vh;
+  display: flex;
+}
+
+.container-left {
+  width: 70%;
+}
+.contenedor {
+  margin-left: 10px;
+  margin-top: 8vh;
+  height: 90vh;
+  width: 200px;
+}
+
+.print-information {
+  width: 100%;
+  margin-top: 10vh;
+  height: 88vh;
+  padding: 20px;
+}
+
+.container-rigth {
+  background-color: var(--red);
+  height: 100vh;
+  width: 30%;
+}

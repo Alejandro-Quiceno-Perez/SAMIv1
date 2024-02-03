@@ -1,12 +1,13 @@
-// // selector
-// var menu = document.querySelector('.hamburger');
+const btnOpen = document.querySelector("#open-menu");
+const btnClose = document.querySelector("#close-menu");
+const nav = document.querySelector("#menu");
 
-// // method
-// function toggleMenu(event) {
-//     this.classList.toggle('is-active');
-//     document.querySelector(".menuppal").classList.toggle("is_active");
-//     event.preventDefault();
-// }
+btnOpen.addEventListener("click", (e) => {
+    e.preventDefault();
+    nav.classList.add("visible");
+});
 
-// // event
-// menu.addEventListener('click', toggleMenu, false);
+btnClose.addEventListener("click", (e) => {
+    e.preventDefault();
+    nav.classList.remove("visible");
+})
