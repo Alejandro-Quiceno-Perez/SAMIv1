@@ -38,37 +38,38 @@
 
         <!-- LOREM 1 -->
         <button class="nav-link active my-3" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home"
-          type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Servicios activos pero no en
-          curso</button>
+          type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Active service</button>
 
         <!-- LOREM 2 -->
         <button class="nav-link my-3" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile"
-          type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Ambulancia haciendo
-          recorrido</button>
+          type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Ambulance Location</button>
 
 
         <!-- LOREM 4 -->
         <button class="nav-link my-3" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages"
-          type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Servicio finalizado </button>
+          type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Service completed</button>
 
         <!-- LOREM 5 -->
         <button class="nav-link my-3" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings"
-          type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Historial del
-          servicio</button>
+          type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Service history</button>
       </div>
 
 
       <!-- PINTAR INFORMACION  -->
       <div class="tab-content print-information" id="v-pills-tabContent">
         <!-- LOREM 1 -->
-        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab"
+        <div class="tab-pane mt-3 fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab"
           tabindex="0">
-          <div class="card">
-            <h5 class="card-header">Featured</h5>
+          <div class="card mt-3">
+            <h5 class="card-header">Active service</h5>
             <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <h5 class="card-title">Name person</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque labore voluptatibus
+                aliquam saepe cum modi dolores, ut quaerat, mollitia assumenda libero quisquam architecto earum. Nam et
+                esse perspiciatis illo temporibus?</p>
+              <div class="modal-footer">
+                <button class="btn btn-primary">Update service</button>
+              </div>
             </div>
           </div>
         </div>
@@ -76,12 +77,17 @@
         <!-- LOREM 2 -->
         <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab"
           tabindex="0">
-          <div class="card">
-            <h5 class="card-header">Featured</h5>
+          <div class="card mt-3">
+            <h5 class="card-header">Active service</h5>
             <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-danger">Go somewhere</a>
+              <h5 class="card-title">Name person</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, magni doloremque
+                est voluptatem, nulla sunt unde quo voluptates facilis nesciunt dolore exercitationem delectus tempore?
+                Eligendi laboriosam expedita iusto eum ab.</p>
+              <div class="modal-footer">
+                <button class="btn btn-info mx-3">Completed</button>
+                <button class="btn btn-danger">Delet service</button>
+              </div>
             </div>
           </div>
         </div>
@@ -90,7 +96,7 @@
         <!-- LOREM 4 -->
         <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab"
           tabindex="0">
-          <div class="card">
+          <div class="card mt-3">
             <div class="card-header">
               Quote
             </div>
@@ -137,15 +143,31 @@
             </tbody>
           </table>
         </div>
-
-
       </div>
     </div>
 
     <!-- Lado derecho -->
 
     <div class="container-rigth">
+      <div class="container-service">
+        <h2 class="text-center mt-4 fw-bold text-white">Inbound services</h2>
+        <div class="container-cards d-flex flex-wrap justify-content-center">
+          <div class="card m-3">
+            <h5 class="card-header">New service</h5>
+            <div class="card-body">
+              <h5 class="card-text">Name person</h5>
+              <p class="card-text">Email: example@correo</p>
+              <p class="card-text">Tel: 123456789</p>
+              <p class="card-text">Address: Cl n # 1 - 1</p>
+              <div class="modal-footer">
+                <button class="btn btn-danger">Cancel</button>
+                <button class="btn btn-success mx-3">Accept</button>
+              </div>
+            </div>
+          </div>
 
+        </div>
+      </div>
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
