@@ -25,7 +25,7 @@ $(document).ready(function () {
   } else {
     boxSlider.className = "box-slider color-5";
   }
-};
+});
         // Calculate color based on the slider value
         let colorClass;
         if (value <= 1) {
@@ -44,7 +44,7 @@ $(document).ready(function () {
 
         $('#slider-value').attr('class', 'color-' + Math.round(value));
     });
-});
+}
 
 document.addEventListener("DOMContentLoaded", function () {
     let sliderContainer = document.getElementById("imageSlider");
