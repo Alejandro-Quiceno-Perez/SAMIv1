@@ -6,7 +6,111 @@
   align-items: center;
 }
 
+/* ESTILOS HEADER - LOGO Y NAVBAR */
 
+.container-header {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 45px;
+  align-items: center;
+  width: 100vw;
+  height: 10vh;
+  z-index: 1;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menu-nav {
+  list-style: none;
+  display: flex;
+  gap: 5px;
+}
+
+.menu-nav li a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+.open-menu,
+.close-menu {
+  border: none;
+  background: none;
+  display: block;
+  padding: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.open-menu i,
+.close-menu i {
+  font-size: 30px;
+  color: var(--white);
+  transition: 0.2s;
+}
+
+.close-menu i:hover {
+  color: var(--red);
+}
+
+.open-menu i:hover {
+  color: var(--dark);
+}
+
+.close-menu:hover {
+  transform: scale(1.3);
+}
+.open-menu:hover {
+  transform: scale(1.3);
+}
+
+.menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+
+.menu button {
+  position: absolute;
+  top: 30px;
+  right: 45px;
+  padding: 5px;
+}
+
+.menu-nav {
+  width: 100vw;
+  flex-direction: column;
+  background-color: #000000;
+  bottom: 0;
+  padding: 10px;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu-nav li {
+  padding: 20px;
+}
+
+/* MENU HAMBURGUESA */
 
 /* ESTILOS CONTENEDOR MAPA */
 .container-map {
@@ -118,9 +222,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  opacity: 0;
-  transition: opacity 3s ease-in-out;
-  overflow-x: hidden;
+  opacity: 0.6;
 }
 
 /* Mostrar la primera imagen al cargar la página */
@@ -139,39 +241,90 @@
   background-color: rgba(0, 0, 0, 0.679);
   padding: 5px;
   text-align: center;
-
 }
-
 
 /* SLIDE DE EMERGENCIA */
 
-
-
-
-.color-1 {
-  border-radius: 50px;
-  background-color: #1803ff;
+.box-slider {
+  padding: 20px 20px 20px 30px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #a09f9f;
+  display: flex;
+  align-items: center;
 }
 
-.color-2 {
-  border-radius: 50px;
-  background-color: #29ff03;
+.box-slider.color-1 {
+  background-color: #0051ff;
 }
 
-.color-3 {
-  border-radius: 50px;
-  background-color: #fff203;
+.box-slider.color-2 {
+  background-color: #00ff08;
 }
 
-.color-4 {
-  border-radius: 50px;
-  background-color: #ff9d00;
+.box-slider.color-3 {
+  background-color: #ffee00;
+}
+.box-slider.color-4 {
+  background-color: #ff6a00;
+}
+.box-slider.color-5 {
+  background-color: #ff0000;
 }
 
-.color-5 {
-  
-  border-radius: 50px;
-  background-color: #d00000;
+.box-slider .slider {
+  height: 5px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.box-slider .slider input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  background: none;
+  -webkit-appearance: none;
+}
+
+.box-slider .value {
+  font-size: 30px;
+  font-weight: 600;
+  width: 55px;
+  text-align: center;
 }
 
 /* FIN SLIDE DE EMERGENCIA */
+
+#imageSlider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 3s ease-in-out;
+  overflow-x: hidden;
+}
+
+/* Mostrar la primera imagen al cargar la página */
+.slide:first-child {
+  opacity: 1;
+}
+
+.section-about .about {
+  background-color: #00000090;
+  height: 30%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.section-about .about p {
+  background: none;
+  color: #fff !important;
+}
