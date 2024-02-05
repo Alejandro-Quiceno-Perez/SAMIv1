@@ -19,7 +19,7 @@ function attachSignin(element) {
         document.getElementById('name').innerText = "Signed in: " +
             googleUser.getBasicProfile().getName();
       }, function(error) {
-        
+        console.log(error.message)
       });
 }
 
