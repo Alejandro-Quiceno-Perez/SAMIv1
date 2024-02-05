@@ -10,11 +10,11 @@
   <link rel="shortcut icon" href="./img/ambulancia.png" type="image/x-icon" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="./styles/styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="./styles/styleAdmin.css" />
 </head>
 
-<body>
+<body class="">
   <header class="container-header">
     <div class="logo">
       <img src="./img/logo3BG.png" alt="" />
@@ -23,15 +23,156 @@
     <nav class="menu" id="menu">
       <button class="close-menu" id="close-menu"><i class="bi bi-x-lg"></i></button>
       <ul class="menu-nav">
-        <li><a href="user-page.html" data-bs-toggle="modal" data-bs-target="#modalLogin">Login</a></li>
+        <li><a href="index.html">SAMI</a></li>
         <li><a href="aboutUs.html">About us</a></li>
-        <li><a href="#">Status of your service</a></li>
+        <li><a href="admin.html">Status of your service</a></li>
       </ul>
     </nav>
   </header>
 
-  
+  <div class="container-info">
+    <!-- Lado derecho -->
+    <div class="d-flex align-items-center container-left">
+      <div class="nav flex-column nav-pills me-3  justify-content-center contenedor" id="v-pills-tab" role="tablist"
+        aria-orientation="vertical">
 
+        <!-- LOREM 1 -->
+        <button class="nav-link active my-3" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home"
+          type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Active service</button>
+
+        <!-- LOREM 2 -->
+        <button class="nav-link my-3" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile"
+          type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Ambulance Location</button>
+
+
+        <!-- LOREM 4 -->
+        <button class="nav-link my-3" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages"
+          type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Service completed</button>
+
+        <!-- LOREM 5 -->
+        <button class="nav-link my-3" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings"
+          type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Service history</button>
+      </div>
+
+
+      <!-- PINTAR INFORMACION  -->
+      <div class="tab-content print-information" id="v-pills-tabContent">
+        <!-- LOREM 1 -->
+        <div class="tab-pane mt-3 fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab"
+          tabindex="0">
+          <div class="card mt-3">
+            <h5 class="card-header">Active service</h5>
+            <div class="card-body">
+              <h5 class="card-title">Name person</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque labore voluptatibus
+                aliquam saepe cum modi dolores, ut quaerat, mollitia assumenda libero quisquam architecto earum. Nam et
+                esse perspiciatis illo temporibus?</p>
+              <div class="modal-footer">
+                <button class="btn btn-primary">Update service</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- LOREM 2 -->
+        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab"
+          tabindex="0">
+          <div class="card mt-3">
+            <h5 class="card-header">Active service</h5>
+            <div class="card-body">
+              <h5 class="card-title">Name person</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, magni doloremque
+                est voluptatem, nulla sunt unde quo voluptates facilis nesciunt dolore exercitationem delectus tempore?
+                Eligendi laboriosam expedita iusto eum ab.</p>
+              <div class="modal-footer">
+                <button class="btn btn-info mx-3">Completed</button>
+                <button class="btn btn-danger">Delet service</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- LOREM 4 -->
+        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab"
+          tabindex="0">
+          <div class="card mt-3">
+            <div class="card-header">
+              Quote
+            </div>
+            <div class="card-body">
+              <blockquote class="blockquote mb-0">
+                <p>A well-known quote, contained in a blockquote element.</p>
+                <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite>
+                </footer>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+
+        <!-- LOREM 5 -->
+        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab"
+          tabindex="0">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lado derecho -->
+
+    <div class="container-rigth">
+      <div class="container-service">
+        <h2 class="text-center mt-4 fw-bold text-white">Inbound services</h2>
+        <div class="container-cards d-flex flex-wrap justify-content-center">
+          <div class="card m-3">
+            <h5 class="card-header">New service</h5>
+            <div class="card-body">
+              <h5 class="card-text">Name person</h5>
+              <p class="card-text">Email: example@correo</p>
+              <p class="card-text">Tel: 123456789</p>
+              <p class="card-text">Address: Cl n # 1 - 1</p>
+              <div class="modal-footer">
+                <button class="btn btn-danger">Cancel</button>
+                <button class="btn btn-success mx-3">Accept</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
   <script src="/js/menu.js"></script>
 </body>
 

@@ -1,0 +1,142 @@
+.container-principal {
+  height: 100vh;
+  background-color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+/* ESTILOS CONTENEDOR MAPA */
+.container-map {
+  width: 100%;
+  height: 100%;
+}
+
+.map {
+  height: 80%;
+  display: flex;
+  justify-content: center;
+}
+
+.map gmp-map {
+  border: 0;
+  /* border-radius: 30px; */
+  height: 90%;
+  width: 100%;
+  outline: 0;
+  border: 0;
+  text-decoration: none;
+}
+
+.info {
+  height: 20vh;
+}
+
+.info h1 {
+  margin-left: 60px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 3px;
+  font-size: 40px;
+}
+
+.info h3 {
+  margin-left: 60px;
+  margin-top: 20px;
+  text-transform: uppercase;
+  font-weight: lighter;
+  letter-spacing: 3px;
+  font-size: 25px;
+}
+
+/* ESTILOS CONTENEDOR LOGIN */
+
+.container-login {
+  width: 40%;
+}
+
+.section-login {
+  background-color: var(--red);
+  height: 50vh;
+  position: relative;
+  cursor: pointer;
+}
+
+.login {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 50px;
+  bottom: 50px;
+  padding: 10px;
+  text-decoration: none;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.login h1 {
+  font-size: 25px;
+  font-weight: lighter;
+}
+
+.login::before {
+  background-color: var(--white);
+  content: "";
+  display: inline-block;
+  height: 1px;
+  margin-right: 10px;
+  transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+  width: 0;
+}
+
+.login:hover::before {
+  background-color: var(--white);
+  width: 30px;
+}
+
+/* SECCION ABOUT ME */
+.section-about {
+  position: relative;
+  background-color: var(--blue);
+  height: 50vh;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+
+#imageSlider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 3s ease-in-out;
+  overflow-x: hidden;
+}
+
+/* Mostrar la primera imagen al cargar la página */
+.slide:first-child {
+  opacity: 1;
+}
+.about { 
+  position: absolute;
+  bottom: 10px;
+  padding: 20px;
+  text-decoration: none;
+  color: var(--white);
+}
+
+.about p {
+  background-color: rgba(0, 0, 0, 0.679);
+  padding: 5px;
+  text-align: center;
+}

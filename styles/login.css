@@ -1,88 +1,36 @@
-
-/* MÓDULO LOGIN */
-
-/* Panel izquierdo credenciales */
-.left-credentials {
-  width: 50%;
-  height: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.right-credentials {
-  width: 50%;
-  height: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 /* LOGIN GOOGLE */
-#customBtn {
+.customGPlusSignIn {
   display: flex;
+  align-items: center;
+  justify-content: center;
   background: white;
   color: #444;
-  width: 200px;
-  height: 35px;
+  width: 100%;
   border-radius: 5px;
-  border: thin solid #888;
-  box-shadow: 1px 1px 1px grey;
-  white-space: nowrap;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
+  border: 1px solid #ccc4c48f;
+  transition: .2s;
 }
 
-#customBtn:hover {
+.customGPlusSignIn:hover {
   cursor: pointer;
+  background-color: #ccc4c48f;
 }
 
-#gSignInWrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 2px;
-  width: 200px;
+.icon {
+  height: 40px;
 }
 
-span.label {
-  font-family: serif;
-  font-weight: normal;
-  margin-right: 4px;
-  width: 70%;
-}
 
-span.icon {
-  background: transparent 5px 50% no-repeat;
-  display: flex;
-  vertical-align: middle;
+.icon img {
+  padding: 10px;
+  width: 100%;
+  height: 100%;
 }
 
 span.buttonText {
-  width: 70%;
-  display: flex;
-  vertical-align: middle;
-  padding-left: 42px;
+  
+  padding-left: 30px;
   padding-right: 42px;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: bold;
-  font-family: "Roboto", sans-serif;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
-}
-
-img {
-  object-fit: cover;
-  opacity: 0.6;
-  border-radius: 10px;
-  padding: 3px;
 }
