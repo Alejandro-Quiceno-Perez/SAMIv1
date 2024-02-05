@@ -48,7 +48,8 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalRegister">Register</button>
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                        data-bs-target="#modalRegister">Register</button>
                     <button type="button" class="btn btn-primary">Login</button>
                 </div>
             </div>
@@ -76,17 +77,6 @@
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Confirm password</label>
                             <input type="password" class="form-control" id="exampleInputPassword1">
-                        </div>
-                        <div class="mb-3 google">
-                            <label for="exampleInputPassword1" class="form-label">Register with Google</label>
-                            <div id="gSignInWrapper" class="gSignInWrapper">
-                                <div id="customBtn" class="customGPlusSignIn">
-                                    <span class="icon"><img src="./img/google.png" alt="google login"></span>
-                                    <span class="buttonText">Google</span>
-                                </div>
-                            </div>
-                            <div id="name"></div>
-
                         </div>
                     </form>
                 </div>
@@ -121,12 +111,31 @@
         <div class="container-map">
             <div class="map">
                 <gmp-map center="6.21961784362793,-75.58338165283203" zoom="14" map-id="DEMO_MAP_ID">
-                    <gmp-advanced-marker position="6.21961784362793,-75.58338165283203" title="My location"></gmp-advanced-marker>
+                    <gmp-advanced-marker position="6.21961784362793,-75.58338165283203"
+                        title="My location"></gmp-advanced-marker>
                 </gmp-map>
             </div>
-            <div class="info">
+            <div class="info displayNone">
                 <h1>SAMI</h1>
                 <h3>Your health, our prurpose</h3>
+            </div>
+            <div class="info-userService">
+                <div class="card ">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h3>Information about your service</h3>
+                        <h5>count - second</h5>
+                    </div>
+                    <div class="card-body row">
+                        <p class="card-text col-4">Information Id service: <span></span></p>
+                        <p class="card-text col-4">name of the driver: <span>Super chory</span></p>
+                        <p class="card-text col-4">Ambulance type: <span>Ambulance</span></p>
+                        <p class="card-text col-4">license plate: <span>ABC-123</span></p>
+                        <p class="card-text col-4">cost of service: <span>$0-100% discount</span></p>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger mx-3" data-bs-dismiss="modal" id="cancelService">Cancel</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- CONTENEDORES LADO DERECHO -->
