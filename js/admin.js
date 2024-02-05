@@ -146,7 +146,7 @@ const pintarCardsRight = (data) => {
   });
 };
 
-const startService = async (id) => {
+const updateServiceState = async (id, newState) => {
   try {
     const service = await fetch(`${urlDesplegada}/requests/${id}`);
 
@@ -162,85 +162,27 @@ const startService = async (id) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ ...data, state: states.started }),
+      body: JSON.stringify({ ...data, state: newState }),
     });
 
     obtenerInfo();
   } catch (error) {
     console.log(error.message);
   }
+};
+
+const startService = async (id) => {
+  await updateServiceState(id, states.started);
 };
 
 const completeService = async (id) => {
-  try {
-    const service = await fetch(`${urlDesplegada}/requests/${id}`);
-
-    const data = await service.json();
-
-    if (!data) {
-      console.log("El servicio no existe");
-      return;
-    }
-
-    await fetch(`${urlDesplegada}/requests/${data.id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ ...data, state: states.completed }),
-    });
-
-    obtenerInfo();
-  } catch (error) {
-    console.log(error.message);
-  }
+  await updateServiceState(id, states.completed);
 };
 
 const acceptService = async (id) => {
-  try {
-    const service = await fetch(`${urlDesplegada}/requests/${id}`);
-
-    const data = await service.json();
-
-    if (!data) {
-      console.log("El servicio no existe");
-      return;
-    }
-
-    await fetch(`${urlDesplegada}/requests/${data.id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ ...data, state: states.active }),
-    });
-
-    obtenerInfo();
-  } catch (error) {
-    console.log(error.message);
-  }
+  await updateServiceState(id, states.active);
 };
 
 const eliminarService = async (id) => {
-  try {
-    const service = await fetch(`${urlDesplegada}/requests/${id}`);
-
-    const data = await service.json();
-
-    if (!service) {
-      console.log("el servicio no existe");
-      return;
-    }
-    await fetch(`${urlDesplegada}/requests/${data.id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ ...data, state: states.deleted }),
-    });
-
-    obtenerInfo();
-  } catch (error) {
-    console.log(error.message);
-  }
+  await updateServiceState(id, states.deleted);
 };
