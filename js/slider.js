@@ -1,3 +1,11 @@
+const slider = document.querySelector(".range-input");
+const boxSlider = document.querySelector(".box-slider");
+const value = document.querySelector(".value");
+
+value.textContent = slider.value;
+
+slider.oninput = function () {
+  value.textContent = this.value;
 // Add your custom JavaScript here
 $(document).ready(function () {
     $("#custom-slider").on("input change", function () {
@@ -5,6 +13,19 @@ $(document).ready(function () {
         let value = parseFloat($(this).val()).toFixed(1);
         $('#slider-value').text('Grado: ' + value);
 
+  // Calculate color based on the slider value
+  if (this.value <= 20) {
+    boxSlider.className = "box-slider color-1";
+  } else if (this.value <= 40) {
+    boxSlider.className = "box-slider color-2";
+  } else if (this.value <= 60) {
+    boxSlider.className = "box-slider color-3";
+  } else if (this.value <= 80) {
+    boxSlider.className = "box-slider color-4";
+  } else {
+    boxSlider.className = "box-slider color-5";
+  }
+});
         // Calculate color based on the slider value
         let colorClass;
         if (value <= 1) {
@@ -23,7 +44,7 @@ $(document).ready(function () {
 
         $('#slider-value').attr('class', 'color-' + Math.round(value));
     });
-});
+}
 
 document.addEventListener("DOMContentLoaded", function () {
     let sliderContainer = document.getElementById("imageSlider");
