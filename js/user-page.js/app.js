@@ -17,6 +17,7 @@ const urlDesplegada = "https://sami-i7mr.onrender.com";
 btnRequest.addEventListener("click", (event) => {
   event.preventDefault();
   request();
+  window.open("../../index.html");
 });
 
 //functions
@@ -30,12 +31,12 @@ async function request() {
     patients: userPatientsNum.value,
     emergencyGrade: userEmergencyGrade.value,
     emergencyDescription: userEmergencyDescription.value,
-    state: "pending",
+    state: "pending"
   };
 
   await fetch(`${urlDesplegada}/requests`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(requests),
+    body: JSON.stringify(requests)
   });
 }
