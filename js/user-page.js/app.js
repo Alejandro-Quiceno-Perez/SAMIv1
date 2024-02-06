@@ -11,6 +11,8 @@ const btnRequest = document.getElementById("btn-request");
 
 const URLrequest = "http://localhost:3000/requests";
 
+const urlDesplegada = "https://sami-i7mr.onrender.com";
+
 //eventos
 btnRequest.addEventListener("click", (event) => {
   event.preventDefault();
@@ -28,19 +30,10 @@ async function request() {
     patients: userPatientsNum.value,
     emergencyGrade: userEmergencyGrade.value,
     emergencyDescription: userEmergencyDescription.value,
+    state: "pending",
   };
 
-  console.log(
-    requests.name,
-    requests.email,
-    requests.phone,
-    requests.address,
-    requests.patients,
-    requests.emergencyGrade,
-    requests.emergencyDescription
-  );
-
-  await fetch(URLrequest, {
+  await fetch(`${urlDesplegada}/requests`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(requests),

@@ -58,9 +58,9 @@
       <!-- PINTAR INFORMACION  -->
       <div class="tab-content print-information" id="v-pills-tabContent">
         <!-- LOREM 1 -->
-        <div class="tab-pane mt-3 fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab"
+        <div class="tab-pane mt-3 fade show active servicesActive" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab"
           tabindex="0">
-          <div class="card mt-3">
+          <!-- <div class="card mt-3">
             <h5 class="card-header">Active service</h5>
             <div class="card-body">
               <h5 class="card-title">Name person</h5>
@@ -71,13 +71,13 @@
                 <button class="btn btn-primary">Update service</button>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
 
         <!-- LOREM 2 -->
-        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab"
+        <div class="tab-pane fade servicesStart" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab"
           tabindex="0">
-          <div class="card mt-3">
+          <!-- <div class="card mt-3">
             <h5 class="card-header">Active service</h5>
             <div class="card-body">
               <h5 class="card-title">Name person</h5>
@@ -89,14 +89,14 @@
                 <button class="btn btn-danger">Delet service</button>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
 
 
         <!-- LOREM 4 -->
-        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab"
+        <div class="tab-pane fade servicesCompleted" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab"
           tabindex="0">
-          <div class="card mt-3">
+          <!-- <div class="card mt-3">
             <div class="card-header">
               Quote
             </div>
@@ -107,39 +107,21 @@
                 </footer>
               </blockquote>
             </div>
-          </div>
+          </div> -->
         </div>
 
         <!-- LOREM 5 -->
-        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab"
+        <div class="tab-pane fade allServices" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab"
           tabindex="0">
           <table class="table table-striped">
             <thead>
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">state</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-              </tr>
             </tbody>
           </table>
         </div>
@@ -151,8 +133,8 @@
     <div class="container-rigth">
       <div class="container-service">
         <h2 class="text-center mt-4 fw-bold text-white">Inbound services</h2>
-        <div class="container-cards d-flex flex-wrap justify-content-center">
-          <div class="card m-3">
+        <div class="container-cards d-flex flex-wrap justify-content-center" id="conCards">
+          <!-- <div class="card m-3">
             <h5 class="card-header">New service</h5>
             <div class="card-body">
               <h5 class="card-text">Name person</h5>
@@ -164,7 +146,7 @@
                 <button class="btn btn-success mx-3">Accept</button>
               </div>
             </div>
-          </div>
+          </div> -->
 
         </div>
       </div>
@@ -173,7 +155,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
-  <script src="/js/menu.js"></script>
+  <script src="./js/menu.js"></script>
+  <script src="./js/admin.js"></script>
 </body>
 
 </html>
