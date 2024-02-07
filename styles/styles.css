@@ -124,8 +124,8 @@
   justify-content: center;
 }
 #map {
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
 }
 
 .map iframe {
@@ -375,4 +375,8 @@
 .lang {
   left: initial;
   padding: 0 50px;
+}
+
+.terms {
+  height: 100vh;
 }
