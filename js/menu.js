@@ -1,17 +1,21 @@
+import {randomAmbulancia} from "./ambulance";
 const btnOpen = document.querySelector("#open-menu");
+
 const btnClose = document.querySelector("#close-menu");
 const nav = document.querySelector("#menu");
+const prueba = document.getElementById("prueba");
 
 btnOpen.addEventListener("click", (e) => {
-    e.preventDefault();
-    nav.classList.add("visible");
+  e.preventDefault();
+  nav.classList.add("visible");
 });
 
 btnClose.addEventListener("click", (e) => {
-    e.preventDefault();
-    nav.classList.remove("visible");
-})
+  e.preventDefault();
+  nav.classList.remove("visible");
+});
 
-// const scriptMap = document.querySelector(".script-map");
-// scriptMap.innerHTML = `<script async src="https://maps.googleapis.com/maps/api/js?key=${key}&callback=console.debug&libraries=maps,marker&v=beta">
-// </script>`
+prueba.addEventListener("click", (e) => {
+  e.preventDefault();
+  console.log(randomAmbulancia());
+});
