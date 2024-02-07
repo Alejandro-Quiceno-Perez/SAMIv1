@@ -40,6 +40,10 @@ const pintarCardsRight = (data) => {
   // Reinicializa el contenido del container_cards
   container_cards.innerHTML = "";
   containerServicesActive.innerHTML = "";
+  containerServicesStarted.innerHTML = "";
+  containerServicesCompleted.innerHTML = "";
+  tbodyAllServices.innerHTML = "";
+
 
   data.forEach((i) => {
     if (i.state === "pending") {
@@ -108,7 +112,6 @@ const pintarCardsRight = (data) => {
                 <th scope="row">${i.id}</th>
                 <td>${i.name}</td>
                 <td>${i.state}</td>
-           
               </tr>`;
   });
 
