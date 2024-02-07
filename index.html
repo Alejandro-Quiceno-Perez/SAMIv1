@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SAMI</title>
-    <link rel="stylesheet" href="/styles/navbar.css" />
+    <link rel="stylesheet" href="./styles/navbar.css" />
     <link rel="stylesheet" href="./styles/resetStyles.css" />
     <link rel="shortcut icon" href="./img/ambulancia.png" type="image/x-icon" />
     <link
@@ -28,7 +28,6 @@
       rel="stylesheet"
       type="text/css"
     />
-
   </head>
 
   <body>
@@ -110,7 +109,7 @@
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="exampleModalLabel">Register</h1>
             <button
-              id = "btnModalCerrar"
+              id="btnModalCerrar"
               type="button"
               class="btn-close"
               data-bs-dismiss="modal"
@@ -182,46 +181,42 @@
         <div class="lang">
           <a href="./spanish/indexS.html">ES</a>
           <a href="index.html">EN</a>
-      </div>
+        </div>
 
-      <!-- FIN PRUEBA -->
+        <!-- FIN PRUEBA -->
 
-      <button class="open-menu" id="open-menu">
-        <i class="bi bi-list"></i>
-      </button>
-      <nav class="menu" id="menu">
-        <button class="close-menu" id="close-menu">
-          <i class="bi bi-x-lg"></i>
+        <button class="open-menu" id="open-menu">
+          <i class="bi bi-list"></i>
         </button>
-        <ul class="menu-nav">
-          <li>
-            <a
-              href="user-page.html"
-              data-bs-toggle="modal"
-              data-bs-target="#modalLogin"
-              >Login</a
-            >
-          </li>
-          <li><a href="aboutUs.html">About us</a></li>
-          <li><a href="admin.html">Status of your service</a></li>
-        </ul>
-      </nav>
+        <nav class="menu" id="menu">
+          <button class="close-menu" id="close-menu">
+            <i class="bi bi-x-lg"></i>
+          </button>
+          <ul class="menu-nav">
+            <li>
+              <a
+                href="user-page.html"
+                data-bs-toggle="modal"
+                data-bs-target="#modalLogin"
+                >Login</a
+              >
+            </li>
+            <li><a href="aboutUs.html">About us</a></li>
+            <li><a href="admin.html">Status of your service</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
     <section class="container-principal">
-
       <!-- CONTENEDOR DEL MAPA -->
       <div class="container-map">
         <div class="map">
-          
-          <iframe
-          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d63468.0675761525!2d-75.5597312!3d6.1636608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sco!4v1705616499425!5m2!1ses-419!2sco"
-          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div id="map"></div>
         </div>
         <div class="info">
           <h1>SAMI</h1>
           <h3>Your health, our prurpose</h3>
         </div>
-        
       </div>
       <!-- CONTENEDORES LADO DERECHO -->
       <div class="container-login">
@@ -288,5 +283,11 @@
     <script src="/js/slider.js"></script>
     <script src="./js/menu.js"></script>
     <script src="./js/blue-zone.js"></script>
+    <script src="./js/map.js"></script>
+
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=XXXXXXXXXXXXXXXXXXXXXXXX&libraries=places&callback=initMap"
+      defer
+    ></script>
   </body>
 </html>

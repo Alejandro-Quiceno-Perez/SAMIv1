@@ -123,6 +123,10 @@
   display: flex;
   justify-content: center;
 }
+#map {
+    height: 100%;
+    width: 100%;
+}
 
 .map iframe {
   border: 0;
