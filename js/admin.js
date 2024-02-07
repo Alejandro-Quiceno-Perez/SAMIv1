@@ -1,6 +1,4 @@
-//Urls
-const urlDesplegada = "https://sami-i7mr.onrender.com";
-const urlLocal = "http://localhost:3000";
+import urlDesplegada from "../helpers/constantes";
 
 const states = {
   active: "active",
@@ -40,6 +38,9 @@ const pintarCardsRight = (data) => {
   // Reinicializa el contenido del container_cards
   container_cards.innerHTML = "";
   containerServicesActive.innerHTML = "";
+  containerServicesStarted.innerHTML = "";
+  containerServicesCompleted.innerHTML = "";
+  tbodyAllServices.innerHTML = "";
 
   data.forEach((i) => {
     if (i.state === "pending") {

@@ -1,3 +1,6 @@
+import urlDesplegada from "../helpers/constantes";
+
+
 // Login
 const email = document.getElementById("email");
 const password = document.getElementById("password");
@@ -12,15 +15,11 @@ const passwordRegisterConfirmation = document.getElementById(
 );
 const btnRegister = document.getElementById("register");
 
-const urlDesplegada = "https://sami-i7mr.onrender.com";
-const urlLocal = "http://localhost:3000";
-
 btnRegister.addEventListener("click", (e) => {
   e.preventDefault();
   createUser();
 });
 
-console.log(btnRegister);
 
 // Create user
 async function createUser() {
@@ -66,7 +65,6 @@ async function createUser() {
 btnLogin.addEventListener("click", (e) => {
   e.preventDefault();
   validateLogin();
-  //   console.log(btnLogin);
 });
 
 async function validateLogin() {
