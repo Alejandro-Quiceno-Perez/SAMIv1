@@ -20,7 +20,6 @@ btnRequest.addEventListener("click", (event) => {
   event.preventDefault();
   request();
   window.open("../../index2.html");
-
 });
 
 //functions
@@ -34,21 +33,12 @@ async function request() {
     patients: userPatientsNum.value,
     emergencyGrade: userEmergencyGrade.value,
     emergencyDescription: userEmergencyDescription.value,
+    state: "pending",
   };
-
-  console.log(
-    requests.name,
-    requests.email,
-    requests.phone,
-    requests.address,
-    requests.patients,
-    requests.emergencyGrade,
-    requests.emergencyDescription
-  );
 
   await fetch(`${urlDesplegada}/requests`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(requests)
+    body: JSON.stringify(requests),
   });
 }
