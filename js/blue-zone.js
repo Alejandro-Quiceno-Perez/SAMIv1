@@ -46,10 +46,10 @@ document.addEventListener("DOMContentLoaded", function () {
   function getRandomText() {
     // Lista de mensajes aleatorios
     const messages = [
-      "Cuidado urgente a tu alcance. Nuestras ambulancias responden con rapidez, ¡contáctanos ahora!",
-      "Tu salud es nuestra prioridad. Ambulancias listas para intervenir en segundos. ¡Confía en nosotros!",
-      "Servicio de ambulancia 24/7. Velocidad y atención médica de calidad. Estamos aquí cuando nos necesitas.",
-      "SAMI. Tu salud. Nuestra prioridad",
+      "Urgent care at your fingertips. Our ambulances respond quickly, contact us now!",
+      "Your health is our priority. Ambulances ready to intervene in seconds. Trust us!",
+      "24/7 ambulance service. Speed ​​and quality medical care. We are here when you need us.",
+      "SAMI. Your health. Our priority",
     ];
 
     // Obtener un índice aleatorio

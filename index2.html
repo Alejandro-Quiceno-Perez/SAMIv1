@@ -110,7 +110,6 @@
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="exampleModalLabel">Register</h1>
             <button
-              id = "btnModalCerrar"
               type="button"
               class="btn-close"
               data-bs-dismiss="modal"
@@ -212,16 +211,40 @@
       <!-- CONTENEDOR DEL MAPA -->
       <div class="container-map">
         <div class="map">
-          
+
           <iframe
-          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d63468.0675761525!2d-75.5597312!3d6.1636608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sco!4v1705616499425!5m2!1ses-419!2sco"
-          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-        <div class="info">
-          <h1>SAMI</h1>
-          <h3>Your health, our prurpose</h3>
+          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15866.646371510467!2d-75.56260345!3d6.1760377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sco!4v1707232020416!5m2!1ses!2sco"
+          style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         
+        <div class="info-userService">
+        <div class="card">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <h3>Information about your service</h3>
+            <h5>count - second</h5>
+          </div>
+          <div class="card-body row">
+            <p class="card-text col-4">
+              Information Id service: <span></span>
+            </p>
+            <p class="card-text col-4">
+              name of the driver: <span>Super chory</span>
+            </p>
+            <p class="card-text col-4">
+              Ambulance type: <span>Ambulance</span>
+            </p>
+            <p class="card-text col-4">License Plate: <span>ABC-123</span></p>
+            <p class="card-text col-4">
+              Cost of Service: <span>$0-100% discount</span>
+            </p>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger mx-3" data-bs-dismiss="modal" id="cancelService">
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
       </div>
       <!-- CONTENEDORES LADO DERECHO -->
       <div class="container-login">

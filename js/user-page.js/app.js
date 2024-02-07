@@ -6,6 +6,8 @@ const userAddress = document.getElementById("user-address");
 const userPatientsNum = document.getElementById("patients");
 const userEmergencyGrade = document.getElementById("emergency");
 const userEmergencyDescription = document.getElementById("emerg-description");
+const infoUserService = document.querySelector(".info-userService");
+const infoHomePage = document.querySelector(".info");
 
 const btnRequest = document.getElementById("btn-request");
 
@@ -17,7 +19,8 @@ const urlDesplegada = "https://sami-i7mr.onrender.com";
 btnRequest.addEventListener("click", (event) => {
   event.preventDefault();
   request();
-  window.open("../../index.html");
+  window.open("../../index2.html");
+
 });
 
 //functions

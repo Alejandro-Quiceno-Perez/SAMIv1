@@ -11,6 +11,7 @@ const passwordRegisterConfirmation = document.getElementById(
   "passwordConfirmation"
 );
 const btnRegister = document.getElementById("register");
+const btnCerrar = document.getElementById("btnModalCerrar");
 
 const urlDesplegada = "https://sami-i7mr.onrender.com";
 const urlLocal = "http://localhost:3000";
@@ -18,6 +19,7 @@ const urlLocal = "http://localhost:3000";
 btnRegister.addEventListener("click", (e) => {
   e.preventDefault();
   createUser();
+  btnModalCerrar.click();
 });
 
 console.log(btnRegister);
@@ -39,16 +41,16 @@ async function createUser() {
     const user = {
       email: emailRegister.value,
       password: passwordRegister.value,
-      role: "user",
+      role: "user"
     };
 
     if (passwordRegister.value === passwordRegisterConfirmation.value) {
       const createUser = await fetch(`${urlDesplegada}/users`, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
-        body: JSON.stringify(user),
+        body: JSON.stringify(user)
       });
 
       console.log(createUser);
