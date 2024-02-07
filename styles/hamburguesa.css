@@ -1,11 +1,5 @@
 /* hambuerguesa */
-:root {
-    --white: #ffffff;
-    --blue: #050b9e;
-    --red: #d00000;
-    --dark: #000
-    --font: "Roboto Condensed";
-  }
+
 .navbar{
     width: 100vw;
     display: flex;
@@ -13,12 +7,8 @@
     justify-content: right;
     top: 20px;
     right: 100px;
-    
     position: absolute;
     z-index: 1;
-    
-
-       
 }
 
 .checkbox, .icons-menu{

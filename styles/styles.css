@@ -119,12 +119,12 @@
 }
 
 .map {
-  height: 80%;
+  height: 70%;
   display: flex;
   justify-content: center;
 }
 
-.map gmp-map {
+.map iframe {
   border: 0;
   /* border-radius: 30px; */
   height: 90%;
@@ -135,7 +135,7 @@
 }
 
 .info {
-  height: 20vh;
+  height: 30vh;
 }
 
 .info h1 {
@@ -155,6 +155,25 @@
   font-size: 25px;
 }
 
+.displayNone {
+  display: none;
+}
+
+.info-userService {
+  height: 30vh;
+  padding: 20px 60px;
+}
+
+.info-userService .card {
+  box-shadow: 0 1px 10px rgb(145, 144, 144);
+  /* font-size: 20px; */
+  height: 100%;
+}
+
+.info-userService .card .modal-footer {
+  position: absolute;
+  bottom: 5px;
+}
 /* ESTILOS CONTENEDOR LOGIN */
 
 .container-login {
@@ -210,12 +229,10 @@
   overflow: hidden;
 }
 
-
 #imageSlider {
   position: relative;
   width: 100%;
   height: 100%;
-  
 }
 
 .slide {
@@ -229,7 +246,7 @@
 .slide:first-child {
   opacity: 1;
 }
-.about { 
+.about {
   position: absolute;
   bottom: 10px;
   padding: 20px;
@@ -327,4 +344,31 @@
 .section-about .about p {
   background: none;
   color: #fff !important;
+}
+
+/* idiomas */
+.navegation-page {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.lang a {
+  font-size: 1.5rem;
+  display: inline-block;
+  padding: 0 15px;
+  width: 45px;
+  text-decoration: none;
+  color: var(--white);
+  transition: 0.3s;
+}
+
+.lang a:hover {
+  transform: translateY(-3px);
+  color: #000000;
+}
+
+.lang {
+  left: initial;
+  padding: 0 50px;
 }
