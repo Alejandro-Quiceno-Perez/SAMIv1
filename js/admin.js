@@ -1,3 +1,5 @@
+//imports
+import {randomAmbulancia} from "./ambulance.js"
 //Urls
 const urlDesplegada = "https://sami-i7mr.onrender.com";
 const urlLocal = "http://localhost:3000";
@@ -70,11 +72,12 @@ const pintarCardsRight = (data) => {
             <h5 class="card-header">Active service</h5>
             <div class="card-body">
               <h5 class="card-title">${i.name}</h5>
-              < class="card-text">Emergency Grade: ${i.emergencyGrade}
+              <p class="card-text">Emergency Grade: ${i.emergencyGrade}
               <br>Patients: ${i.patients}</br>
               <br>Emergency Description: ${i.emergencyDescription}</br>
               </p>
-              <div class="modal-footer">
+              <div class="modal-footer d-grid gap-2">
+                <button class="btn btn-info ambluance" onclick="randomAmbulancia()">Assign ambulance</button>
                 <button class="btn btn-success start" id=${i.id}>Start service</button>
               </div>
             </div>

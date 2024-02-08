@@ -2,8 +2,11 @@ export function randomAmbulancia(ambulancias) {
     // Genera índice random entre las ambulancias existentes
     const indiceAleatorio = Math.floor(Math.random() * ambulancias.length);
   
-    // Saco la ambulancia seleccionada por en índice
-    const ambulanciaSeleccionada = ambulancias[indiceAleatorio];
-    
+    async function obtenerInfoJson (){
+
+        const resonse = await fetch ("./db/ambulance.json")
+        const data= await Response.json()
+        console.log(data);
+    }
     return ambulanciaSeleccionada;
 };

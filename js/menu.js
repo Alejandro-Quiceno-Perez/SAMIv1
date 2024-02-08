@@ -1,4 +1,4 @@
-import {randomAmbulancia} from "./ambulance";
+import {randomAmbulancia} from "./ambulance.js";
 const btnOpen = document.querySelector("#open-menu");
 
 const btnClose = document.querySelector("#close-menu");

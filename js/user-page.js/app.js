@@ -19,7 +19,7 @@ const urlDesplegada = "https://sami-i7mr.onrender.com";
 btnRequest.addEventListener("click", (event) => {
   event.preventDefault();
   request();
-  window.open("../../index2.html");
+  window.open("../../requestService.html");
 });
 
 //functions

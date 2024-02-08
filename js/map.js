@@ -1,4 +1,4 @@
-let map;
+/* let map;
 let directionsService;
 let directionsRenderer;
 
@@ -52,79 +52,101 @@ function geocodeLatLng(geocoder, latLng) {
         }
     });
 }
+ */
 
+//FORMA 2 PUNTOS
 
-//FORMA 2 PUNTOS 
-
-/* 
 let map;
 let directionsService;
 let directionsRenderer;
 
 function initMap() {
-    map = new google.maps.Map(document.getElementById("map"), {
-      center: { lat: 6.2193724219356685, lng: -75.58339605807475 },  //se centra en de moda outlet
-        zoom: 12,
-    });
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: 6.2193724219356685, lng: -75.58339605807475 }, //se centra en de moda outlet
+    zoom: 12,
+  });
 
-    directionsService = new google.maps.DirectionsService();
-    directionsRenderer = new google.maps.DirectionsRenderer();
-    directionsRenderer.setMap(map);
+  directionsService = new google.maps.DirectionsService();
+  directionsRenderer = new google.maps.DirectionsRenderer();
+  directionsRenderer.setMap(map);
 
-    const geocoder = new google.maps.Geocoder();
+  const geocoder = new google.maps.Geocoder();
 
-    let selectedPoints = [];
+  let selectedPoints = [];
 
-    // Evento al hacer clic en el mapa
-    map.addListener("click", (event) => {
-        if (selectedPoints.length < 2) {
-            placeMarker(event.latLng);
-            geocodeLatLng(geocoder, event.latLng);
-            selectedPoints.push(event.latLng);
+  // Evento al hacer clic en el mapa
+  map.addListener("click", (event) => {
+    if (selectedPoints.length < 2) {
+      placeMarker(event.latLng);
+      geocodeLatLng(geocoder, event.latLng);
+      selectedPoints.push(event.latLng);
 
-            if (selectedPoints.length === 2) {
-                calculateAndDisplayRoute(selectedPoints[0], selectedPoints[1]);
-            }
-        } else {
-            alert("Ya has seleccionado dos puntos.");
-        }
-    });
+      if (selectedPoints.length === 2) {
+        calculateAndDisplayRoute(selectedPoints[0], selectedPoints[1]);
+      }
+    } else {
+      alert("Ya has seleccionado dos puntos.");
+    }
+  });
 }
 
-function placeMarker(location) {
-    const marker = new google.maps.Marker({
-        position: location,
-        map: map,
-    });
+function placeMarker(location, typeService) {
+  let ambulanceIcon = {
+    url: "./img/map-icons/ambulance.png",
+    scaledSize: new google.maps.Size(50, 50),
+  };
+  let emergencyIcon = {
+    url: "./img/map-icons/emergency.png",
+    scaledSize: new google.maps.Size(50, 50),
+  };
+
+  let icon;
+  if (typeService) {
+    icon = emergencyIcon;
+  } else {
+    icon = ambulanceIcon;
+  }
+
+  const marker = new google.maps.Marker({
+    position: location,
+    map: map,
+    icon: icon,
+  });
 }
 
 function geocodeLatLng(geocoder, latLng) {
-    geocoder.geocode({ location: latLng }, (results, status) => {
-        if (status === "OK") {
-            if (results[0]) {
-                console.log(results[0].formatted_address); // Aquí puedes mostrar la dirección en la interfaz de usuario
-            } else {
-                console.log("No se encontraron resultados");
-            }
-        } else {
-            console.log("Error al geocodificar: " + status);
-        }
-    });
+  geocoder.geocode({ location: latLng }, (results, status) => {
+    if (status === "OK") {
+      if (results[0]) {
+        console.log(results[0].formatted_address); // Aquí puedes mostrar la dirección en la interfaz de usuario
+      } else {
+        console.log("No se encontraron resultados");
+      }
+    } else {
+      console.log("Error al geocodificar: " + status);
+    }
+  });
 }
 
 function calculateAndDisplayRoute(origin, destination) {
-    directionsService.route(
-        {
-            origin: origin,
-            destination: destination,
-            travelMode: google.maps.TravelMode.DRIVING, // Ruta en carro
-        },
-        (response, status) => {
-            if (status === "OK") {
-                directionsRenderer.setDirections(response);
-            } else {
-                window.alert("La solicitud de ruta ha fallado debido a: " + status);
-            }
-        }
-    );
-} */
+  directionsService.route(
+    {
+      origin: origin,
+      destination: destination,
+      travelMode: google.maps.TravelMode.DRIVING, // Ruta en carro
+    },
+    (response, status) => {
+      if (status === "OK") {
+        directionsRenderer.setDirections(response);
+        directionsRenderer.setOptions({
+          polylineOptions: {
+            strokeColor: "#D00000",
+            strokeWeight: 8,
+          },
+        });
+      } else {
+        window.alert("La solicitud de ruta ha fallado debido a: " + status);
+      }
+    }
+  );
+}
