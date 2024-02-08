@@ -1,0 +1,38 @@
+[
+  {
+    "nombre": "Ambulancia 1",
+    "tipo": "Medicalizada",
+    "placa": "ABC123",
+    "conductor": "Hector Vélez",
+    "destino": "Policlínica: Calle 67 #47 - 51 D, Medellín",
+    "lat": 6.264027941555149,
+    "lng": -75.56552693342687
+  },
+  {
+    "nombre": "Ambulancia 2",
+    "tipo": "Asistencial",
+    "placa": "DEF456",
+    "conductor": "Victor Saldarriaga",
+    "destino": "Clínica León XIII: Carrera 51B #69 - 1 - 51, Medellín",
+    "lat": 6.268112229658612,
+    "lng": -75.56564502400282
+  },
+  {
+    "nombre": "Ambulancia 3",
+    "tipo": "Medicalizada",
+    "placa": "GHI789",
+    "conductor": "Jairo Perez",
+    "destino": "Clínica Las Américas: Transversal 27A Sur #42B - 111, ",
+    "lat": 0.180219579583394,
+    "lng": -75.5839984342982
+  },
+  {
+    "nombre": "Ambulancia 4",
+    "tipo": "Asistencial",
+    "placa": "JKL012",
+    "conductor": "Arturo Mendoza",
+    "destino": "Hospital San Rafael: Carrera 51a #4551, Itagüí",
+    "lat": 6.172361025667542,
+    "lng": -75.6133386492704
+  }
+]

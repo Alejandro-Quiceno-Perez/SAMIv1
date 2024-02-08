@@ -1,86 +1,157 @@
-if (!"geolocation" in navigator) {
-  console.error("Geolocalización no disponible");
-} else {
-  navigator.geolocation.getCurrentPosition(
-    (position) => {
-      console.log(position);
-      mapboxgl.accessToken =
-        "pk.eyJ1Ijoia3dtZWppYSIsImEiOiJjbGl2eWk4eWwxb3dhM3Bxdm5kNGtpOXRrIn0.RaBQJtXzaW3dBHodhcQg2Q";
-      let map = new mapboxgl.Map({
-        container: "map",
-        style: "mapbox://styles/mapbox/navigation-day-v1",
-        center: [position.coords.longitude, position.coords.latitude],
-        zoom: 10,
-      });
+import { pintarData } from "./requestService/app.js";
 
-      let markers = [];
-      let routeLayerID = "route";
 
-      let initialMarker = new mapboxgl.Marker()
-        .setLngLat([position.coords.longitude, position.coords.latitude])
-        .addTo(map);
-      markers.push(initialMarker);
+let map;
+let directionsService;
+let directionsRenderer;
 
-      function updateRoute() {
-        if (markers.length === 2) {
-          let start = markers[0].getLngLat();
-          let end = markers[1].getLngLat();
-          let directionsRequest =
-            "https://api.mapbox.com/directions/v5/mapbox/driving/" +
-            start.lng +
-            "," +
-            start.lat +
-            ";" +
-            end.lng +
-            "," +
-            end.lat +
-            "?geometries=geojson&access_token=" +
-            mapboxgl.accessToken;
+function initMap() {
+  const location = pintarData();
 
-          fetch(directionsRequest)
-            .then((response) => response.json())
-            .then((data) => {
-              if (data.routes.length > 0) {
-                let route = data.routes[0].geometry;
-                if (map.getSource(routeLayerID)) {
-                  map.getSource(routeLayerID).setData(route);
-                } else {
-                  map.addLayer({
-                    id: routeLayerID,
-                    type: "line",
-                    source: {
-                      type: "geojson",
-                      data: route,
-                    },
-                    layout: {},
-                    paint: {
-                      "line-width": 2,
-                      "line-color": "#1f00bd",
-                    },
-                  });
-                }
-              }
-            })
-            .catch((error) =>
-              console.error("Error en la solicitud de la ruta:", error)
-            );
-        }
-      }
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: 6.2193724219356685, lng: -75.58339605807475 }, //se centra en de moda outlet
+    zoom: 9,
+  });
 
-      map.on("click", function (e) {
-        let newMarker = new mapboxgl.Marker().setLngLat(e.lngLat).addTo(map);
-        markers.push(newMarker);
+  directionsService = new google.maps.DirectionsService();
+  directionsRenderer = new google.maps.DirectionsRenderer();
+  directionsRenderer.setMap(map);
 
-        if (markers.length > 2) {
-          markers[0].remove();
-          markers.shift();
-        }
+  const geocoder = new google.maps.Geocoder();
+  console.log(location)
 
-        updateRoute();
-      });
-    },
-    (error) => {
-      console.error(error);
+  let emergencyPoint; // Punto A seleccionado por el usuario, lugar de emergencia
+  let ambulancePoint = { lat: location.lat, lng: location.lng }; // Punto B se captura por medio de json ubiaciones de hospitales
+
+  // Evento al hacer clic en el mapa
+  map.addListener("click", (event) => {
+    if (!emergencyPoint) {
+      emergencyPoint = event.latLng;
+      placeMarker(emergencyPoint);
+      geocodeLatLng(geocoder, emergencyPoint);
+    } else {
+      alert("Ya has seleccionado tu lugar de emergencia!");
     }
-  );
+  });
+
+  //calcula y muestra la ruta entre la emergencia y el punto designado por la ambulancia
+  calculateAndDisplayRoute(emergencyPoint, ambulancePoint);
 }
+
+function placeMarker(location) {
+  const marker = new google.maps.Marker({
+    position: location,
+    map: map,
+  });
+}
+
+function geocodeLatLng(geocoder, latLng) {
+  geocoder.geocode({ location: latLng }, (results, status) => {
+    if (status === "OK") {
+      if (results[0]) {
+        console.log(results[0].formatted_address); //muestra la dir seleccionada
+      } else {
+        console.log("No se encontraron resultados");
+      }
+    } else {
+      console.log("Error al geocodificar: " + status);
+    }
+  });
+}
+
+//FORMA 2 PUNTOS
+
+// let map;
+// let directionsService;
+// let directionsRenderer;
+
+// function initMap() {
+//   map = new google.maps.Map(document.getElementById("map"), {
+//     center: { lat: 6.2193724219356685, lng: -75.58339605807475 }, //se centra en de moda outlet
+//     zoom: 12,
+//   });
+
+//   directionsService = new google.maps.DirectionsService();
+//   directionsRenderer = new google.maps.DirectionsRenderer();
+//   directionsRenderer.setMap(map);
+
+//   const geocoder = new google.maps.Geocoder();
+
+//   let selectedPoints = [];
+
+//   // Evento al hacer clic en el mapa
+//   map.addListener("click", (event) => {
+//     if (selectedPoints.length < 2) {
+//       placeMarker(event.latLng);
+//       geocodeLatLng(geocoder, event.latLng);
+//       selectedPoints.push(event.latLng);
+
+//       if (selectedPoints.length === 2) {
+//         calculateAndDisplayRoute(selectedPoints[0], selectedPoints[1]);
+//       }
+//     } else {
+//       alert("Ya has seleccionado dos puntos.");
+//     }
+//   });
+// }
+
+// function placeMarker(location, typeService) {
+//   let ambulanceIcon = {
+//     url: "./img/map-icons/ambulance.png",
+//     scaledSize: new google.maps.Size(50, 50),
+//   };
+//   let emergencyIcon = {
+//     url: "./img/map-icons/emergency.png",
+//     scaledSize: new google.maps.Size(50, 50),
+//   };
+
+//   let icon;
+//   if (typeService) {
+//     icon = emergencyIcon;
+//   } else {
+//     icon = ambulanceIcon;
+//   }
+
+//   const marker = new google.maps.Marker({
+//     position: location,
+//     map: map,
+//     icon: icon,
+//   });
+// }
+
+// function geocodeLatLng(geocoder, latLng) {
+//   geocoder.geocode({ location: latLng }, (results, status) => {
+//     if (status === "OK") {
+//       if (results[0]) {
+//         console.log(results[0].formatted_address); // Aquí puedes mostrar la dirección en la interfaz de usuario
+//       } else {
+//         console.log("No se encontraron resultados");
+//       }
+//     } else {
+//       console.log("Error al geocodificar: " + status);
+//     }
+//   });
+// }
+
+// function calculateAndDisplayRoute(origin, destination) {
+//   directionsService.route(
+//     {
+//       origin: origin,
+//       destination: destination,
+//       travelMode: google.maps.TravelMode.DRIVING, // Ruta en carro
+//     },
+//     (response, status) => {
+//       if (status === "OK") {
+//         directionsRenderer.setDirections(response);
+//         directionsRenderer.setOptions({
+//           polylineOptions: {
+//             strokeColor: "#D00000",
+//             strokeWeight: 8,
+//           },
+//         });
+//       } else {
+//         window.alert("La solicitud de ruta ha fallado debido a: " + status);
+//       }
+//     }
+//   );
+// }

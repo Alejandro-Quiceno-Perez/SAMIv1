@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SAMI - User Page</title>
-    <link rel="stylesheet" href="/styles/navbar.css" />
-    <link rel="stylesheet" href="./styles/resetStyles.css" />
-    <link rel="shortcut icon" href="./img/ambulancia.png" type="image/x-icon" />
+    <title>SAMI - Usuario</title>
+    <link rel="stylesheet" href="../styles/navbar.css" />
+    <link rel="stylesheet" href="../styles/resetStyles.css" />
+    <link rel="shortcut icon" href="../img/ambulancia.png" type="image/x-icon" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
@@ -17,25 +18,24 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="stylesheet" href="../styles/styles.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
-    <link rel="stylesheet" href="/styles/login.css" />
+    <link rel="stylesheet" href="../styles/login.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Roboto"
       rel="stylesheet"
       type="text/css"
     />
-    <link rel="stylesheet" href="/styles/hamburguesa.css">
   </head>
 
   <body>
     <!-- ESTILOS HEADER - LOGO Y NAVBAR -->
     <header class="container-header">
       <div class="logo">
-        <img src="./img/logo3BG.png" alt="" />
+        <img src="../img/logo3BG.png" alt="" />
       </div>
       <button class="open-menu" id="open-menu">
         <i class="bi bi-list"></i>
@@ -47,14 +47,14 @@
         <ul class="menu-nav">
           <li>
             <a
-              href="user-page.html"
+              href="user-pageS.html"
               data-bs-toggle="modal"
               data-bs-target="#modalLogin"
-              >Login</a
+              >Iniciar Sesión</a
             >
           </li>
-          <li><a href="aboutUs.html">About us</a></li>
-          <li><a href="admin.html">Status of your service</a></li>
+          <li><a href="aboutUsS.html">Nosotros</a></li>
+          <li><a href="adminS.html">Estado del Servicio</a></li>
         </ul>
       </nav>
     </header>
@@ -63,7 +63,7 @@
         <form>
           <!-- name -->
           <div class="form-group">
-            <label for="exampleFormControlInput1">Full Name</label>
+            <label for="exampleFormControlInput1">Nombre Completo</label>
             <input
               type="text"
               class="form-control"
@@ -74,7 +74,7 @@
           </div>
           <!-- mail -->
           <div class="form-group">
-            <label for="exampleFormControlInput1">Mail</label>
+            <label for="exampleFormControlInput1">Correo Electrónico</label>
             <input
               type="email"
               class="form-control"
@@ -85,7 +85,7 @@
           </div>
           <!-- phone -->
 
-          <label for="exampleFormControlInput1">Phone Number</label>
+          <label for="exampleFormControlInput1">Teléfono Celular</label>
           <input
             type="email"
             class="form-control"
@@ -95,7 +95,7 @@
           />
           <!-- direccion -->
           <div class="form-group">
-            <label for="exampleFormControlTextarea1">Address</label>
+            <label for="exampleFormControlTextarea1">Dirección:</label>
             <textarea
               class="form-control"
               id="user-address"
@@ -105,7 +105,7 @@
           </div>
           <!-- num pacientes -->
           <div class="form-group">
-            <label for="exampleFormControlSelect1">Number of Patients</label>
+            <label for="exampleFormControlSelect1">Número de pacientes</label>
             <select class="form-control" id="patients" required>
               <option>1</option>
               <option>2</option>
@@ -117,7 +117,7 @@
 
           <!-- slider bar inicio -->
           <label for="exampleFormControlTextarea1"
-            >Emergency Degree
+            >Grado de la emergencia:
           </label>
           <div class="container-box-slider">
             <div class="box-slider">
@@ -139,7 +139,7 @@
           <!-- slide bar fin -->
           <div class="form-group">
             <label for="exampleFormControlTextarea1"
-              >Description of the Emergency:</label
+              >Descripción de la emergencia:</label
             >
             <textarea
               class="form-control"
@@ -150,7 +150,7 @@
           </div>
         </form>
         <button type="button" class="btn btn-danger" id="btn-request">
-          Request
+          Solicitar
         </button>
       </div>
 
@@ -161,16 +161,16 @@
         </div>
         <div class="section-about">
           <div id="imageSlider">
-            <img class="slide" src="./img/blue zone/img1.jpg" alt="Imagen 1" />
-            <img class="slide" src="./img/blue zone/img2.jpg" alt="Imagen 2" />
-            <img class="slide" src="./img/blue zone/img3.jpg" alt="Imagen 3" />
-            <img class="slide" src="./img/blue zone/img4.jpg" alt="Imagen 4" />
-            <img class="slide" src="./img/blue zone/img5.jpg" alt="Imagen 5" />
+            <img class="slide" src="../img/blue zone/img1.jpg" alt="Imagen 1" />
+            <img class="slide" src="../img/blue zone/img2.jpg" alt="Imagen 2" />
+            <img class="slide" src="../img/blue zone/img3.jpg" alt="Imagen 3" />
+            <img class="slide" src="../img/blue zone/img4.jpg" alt="Imagen 4" />
+            <img class="slide" src="../img/blue zone/img5.jpg" alt="Imagen 5" />
           </div>
 
           <a href="#" class="about">
             <p class="text-info">
-              Our ambulances respond quickly, contact us now!
+              Nuestras ambulancias responden con rapidez, ¡contáctanos ahora!
             </p>
           </a>
         </div>
@@ -180,10 +180,10 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="./js/user-page.js/slider.js"></script>
-    <script src="./js/user-page.js/app.js" type="module"></script>
-    <script src="./js/blue-zone.js"></script>
-    <script src="./js/menu.js" type="module"></script>
+    <script src="../js/user-page.js/slider.js"></script>
+    <script src="../js/user-page.js/app.js"></script>
+    <script src="../js/blue-zoneS.js"></script>
+    <script src="../js/menu.js"></script>
     <!-- scripts -->
   </body>
 </html>
