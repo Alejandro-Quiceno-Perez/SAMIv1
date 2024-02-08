@@ -1,36 +1,39 @@
 //imports
-import {randomAmbulancia} from "./ambulance.js"
+import { apiUrl, states } from "../helpers/conts.js";
+import { randomAmbulancia } from "./ambulance.js";
+
 //Urls
-const urlDesplegada = "https://sami-i7mr.onrender.com";
-const urlLocal = "http://localhost:3000";
-
-const states = {
-  active: "active",
-  started: "started",
-  completed: "completed",
-  deleted: "deleted",
-};
-
 // selectores
-let container_cards = document.getElementById("conCards");
-let containerServicesActive = document.querySelector(".servicesActive");
-let containerServicesStarted = document.querySelector(".servicesStart");
-let containerServicesCompleted = document.querySelector(".servicesCompleted");
-let tbodyAllServices = document.querySelector(".allServices tbody");
+// Definir elementos del DOM como variables globales si es necesario
+const container_cards = document.getElementById("conCards");
+const containerServicesActive = document.querySelector(".servicesActive");
+const containerServicesStarted = document.querySelector(".servicesStart");
+const containerServicesCompleted = document.querySelector(".servicesCompleted");
+const tbodyAllServices = document.querySelector(".allServices tbody");
+
+document.addEventListener("DOMContentLoaded", async (e) => {
+  e.preventDefault();
+  await obtenerInfo();
+  await obtenerInfoJson();
+});
 
 let btnEliminar;
 let btnAccept;
 let btnStart;
 let btnComplete;
 
-document.addEventListener("DOMContentLoaded", (e) => {
-  e.preventDefault();
-  obtenerInfo();
-});
-
+export const obtenerInfoJson = async () => {
+  try {
+    const response = await fetch(`${apiUrl}/ambulances`);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log(error.message);
+  }
+};
 const obtenerInfo = async () => {
   try {
-    const response = await fetch(`${urlDesplegada}/requests`);
+    const response = await fetch(`${apiUrl}/requests`);
     const data = await response.json();
     pintarCardsRight(data);
   } catch (error) {
@@ -47,7 +50,7 @@ const pintarCardsRight = (data) => {
   tbodyAllServices.innerHTML = "";
 
   data.forEach((i) => {
-    if (i.state === "pending") {
+    if (i.state === states.pending) {
       container_cards.innerHTML += `
     <div class="card m-3">
             <h5 class="card-header">New service</h5>
@@ -77,7 +80,7 @@ const pintarCardsRight = (data) => {
               <br>Emergency Description: ${i.emergencyDescription}</br>
               </p>
               <div class="modal-footer d-grid gap-2">
-                <button class="btn btn-info ambluance" onclick="randomAmbulancia()">Assign ambulance</button>
+                <button class="btn btn-info ambulance" id=${i.id}>Assign ambulance</button>
                 <button class="btn btn-success start" id=${i.id}>Start service</button>
               </div>
             </div>
@@ -114,15 +117,15 @@ const pintarCardsRight = (data) => {
                 <th scope="row">${i.id}</th>
                 <td>${i.name}</td>
                 <td>${i.state}</td>
-           
               </tr>`;
   });
 
-  btnComplete = document.querySelectorAll(".complete");
-  btnComplete.forEach((i) => {
-    i.addEventListener("click", (e) => {
+  const btnAmbulance = document.querySelectorAll(".ambulance");
+  btnAmbulance.forEach((i) => {
+    i.addEventListener("click", async (e) => {
       e.preventDefault();
-      completeService(i.id);
+      const ambulance = await randomAmbulancia(obtenerInfoJson());
+      updateServiceState(i.id, states.active, ambulance);
     });
   });
 
@@ -130,8 +133,16 @@ const pintarCardsRight = (data) => {
   btnStart.forEach((i) => {
     i.addEventListener("click", (e) => {
       e.preventDefault();
-      console.log(e.target);
       startService(i.id);
+      captureCompleteInfo(i.id);
+    });
+  });
+
+  btnComplete = document.querySelectorAll(".complete");
+  btnComplete.forEach((i) => {
+    i.addEventListener("click", (e) => {
+      e.preventDefault();
+      completeService(i.id);
     });
   });
 
@@ -152,9 +163,21 @@ const pintarCardsRight = (data) => {
   });
 };
 
-const updateServiceState = async (id, newState) => {
+const captureCompleteInfo = async (id) => {
   try {
-    const service = await fetch(`${urlDesplegada}/requests/${id}`);
+    const info = await fetch(`${apiUrl}/requests/${id}?_expand=user`);
+    const data = await info.json();
+
+    // Almacena el objeto 'data' directamente en el localStorage
+    localStorage.setItem("request", JSON.stringify(data));
+  } catch (error) {
+    return console.log(error.message);
+  }
+};
+
+const updateServiceState = async (id, newState, ambulance) => {
+  try {
+    const service = await fetch(`${apiUrl}/requests/${id}?_expand=user`);
 
     const data = await service.json();
 
@@ -162,13 +185,19 @@ const updateServiceState = async (id, newState) => {
       console.log("El servicio no existe");
       return;
     }
+    const updatedAmbulance =
+      ambulance !== undefined ? ambulance : data.ambulance;
 
-    await fetch(`${urlDesplegada}/requests/${data.id}`, {
+    await fetch(`${apiUrl}/requests/${data.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ ...data, state: newState }),
+      body: JSON.stringify({
+        ...data,
+        state: newState,
+        ambulance: updatedAmbulance,
+      }),
     });
 
     obtenerInfo();
@@ -192,102 +221,3 @@ const acceptService = async (id) => {
 const eliminarService = async (id) => {
   await updateServiceState(id, states.deleted);
 };
-
-// const startService = async (id) => {
-//   try {
-//     const service = await fetch(`${urlDesplegada}/requests/${id}`);
-
-//     const data = await service.json();
-
-//     if (!data) {
-//       console.log("El servicio no existe");
-//       return;
-//     }
-
-//     await fetch(`${urlDesplegada}/requests/${data.id}`, {
-//       method: "PUT",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify({ ...data, state: states.started }),
-//     });
-
-//     obtenerInfo();
-//   } catch (error) {
-//     console.log(error.message);
-//   }
-// };
-
-// const completeService = async (id) => {
-//   try {
-//     const service = await fetch(`${urlDesplegada}/requests/${id}`);
-
-//     const data = await service.json();
-
-//     if (!data) {
-//       console.log("El servicio no existe");
-//       return;
-//     }
-
-//     await fetch(`${urlDesplegada}/requests/${data.id}`, {
-//       method: "PUT",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify({ ...data, state: states.completed }),
-//     });
-
-//     obtenerInfo();
-//   } catch (error) {
-//     console.log(error.message);
-//   }
-// };
-
-// const acceptService = async (id) => {
-//   try {
-//     const service = await fetch(`${urlDesplegada}/requests/${id}`);
-
-//     const data = await service.json();
-
-//     if (!data) {
-//       console.log("El servicio no existe");
-//       return;
-//     }
-
-//     await fetch(`${urlDesplegada}/requests/${data.id}`, {
-//       method: "PUT",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify({ ...data, state: states.active }),
-//     });
-
-//     obtenerInfo();
-//   } catch (error) {
-//     console.log(error.message);
-//   }
-// };
-
-// const eliminarService = async (id) => {
-//   try {
-//     const service = await fetch(`${urlDesplegada}/requests/${id}`);
-
-//     const data = await service.json();
-
-//     if (!service) {
-//       console.log("el servicio no existe");
-//       return;
-//     }
-//     await fetch(`${urlDesplegada}/requests/${data.id}`, {
-//       method: "PUT",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify({ ...data, state: states.deleted }),
-//     });
-
-//     obtenerInfo();
-//   } catch (error) {
-//     console.log(error.message);
-//   }
-// };

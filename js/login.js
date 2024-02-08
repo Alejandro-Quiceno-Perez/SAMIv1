@@ -1,3 +1,4 @@
+import {apiUrl} from "../helpers/conts.js";
 // Login
 const email = document.getElementById("email");
 const password = document.getElementById("password");
@@ -13,22 +14,17 @@ const passwordRegisterConfirmation = document.getElementById(
 const btnRegister = document.getElementById("register");
 const btnCerrar = document.getElementById("btnModalCerrar");
 
-const urlDesplegada = "https://sami-i7mr.onrender.com";
-const urlLocal = "http://localhost:3000";
-
 btnRegister.addEventListener("click", (e) => {
   e.preventDefault();
   createUser();
   btnModalCerrar.click();
 });
 
-console.log(btnRegister);
-
 // Create user
 async function createUser() {
   try {
     const userExist = await fetch(
-      `${urlDesplegada}/users?email=${emailRegister.value}`
+      `${apiUrl}/users?email=${emailRegister.value}`
     );
 
     const data = await userExist.json();
@@ -41,19 +37,17 @@ async function createUser() {
     const user = {
       email: emailRegister.value,
       password: passwordRegister.value,
-      role: "user"
+      role: "user",
     };
 
     if (passwordRegister.value === passwordRegisterConfirmation.value) {
-      const createUser = await fetch(`${urlDesplegada}/users`, {
+      const createUser = await fetch(`${apiUrl}/users`, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(user)
+        body: JSON.stringify(user),
       });
-
-      console.log(createUser);
 
       return;
     }
@@ -68,12 +62,12 @@ async function createUser() {
 btnLogin.addEventListener("click", (e) => {
   e.preventDefault();
   validateLogin();
-  //   console.log(btnLogin);
 });
 
 async function validateLogin() {
   try {
-    const login = await fetch(`${urlDesplegada}/users?email=${email.value}`);
+    console.log(email.value);
+    const login = await fetch(`${apiUrl}/users?email=${email.value}`);
     const data = await login.json();
     if (data.length < 1) {
       console.log("user no creado");
@@ -89,7 +83,7 @@ async function validateLogin() {
         console.log("Entro");
         window.location.href = "../../user-page.html";
       }
-      localStorage.setItem("userSami", data[0].email);
+      localStorage.setItem("userSami", JSON.stringify(data[0]));
     }
     console.log("correo y/o contrasena incorrecta");
   } catch (error) {

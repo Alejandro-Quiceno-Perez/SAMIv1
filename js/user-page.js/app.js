@@ -1,3 +1,4 @@
+import { states, apiUrl } from "../../helpers/conts.js";
 //selectores
 const userName = document.getElementById("user-name");
 const userEmail = document.getElementById("user-email");
@@ -6,15 +7,16 @@ const userAddress = document.getElementById("user-address");
 const userPatientsNum = document.getElementById("patients");
 const userEmergencyGrade = document.getElementById("emergency");
 const userEmergencyDescription = document.getElementById("emerg-description");
-const infoUserService = document.querySelector(".info-userService");
-const infoHomePage = document.querySelector(".info");
 
 const btnRequest = document.getElementById("btn-request");
 
-const URLrequest = "http://localhost:3000/requests";
+const obtainInfoUser = localStorage.getItem("userSami");
 
-const urlDesplegada = "https://sami-i7mr.onrender.com";
+const user = JSON.parse(obtainInfoUser);
 
+document.addEventListener("DOMContentLoaded", () => {
+  user ? (userEmail.value = user.email) : "";
+});
 //eventos
 btnRequest.addEventListener("click", (event) => {
   event.preventDefault();
@@ -33,10 +35,11 @@ async function request() {
     patients: userPatientsNum.value,
     emergencyGrade: userEmergencyGrade.value,
     emergencyDescription: userEmergencyDescription.value,
-    state: "pending",
+    userId: user.id,
+    state: states.pending,
   };
 
-  await fetch(`${urlDesplegada}/requests`, {
+  const data = await fetch(`${apiUrl}/requests`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(requests),
